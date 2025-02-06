@@ -1,0 +1,49 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="AllRightsReserved"
+issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
+
+[[mods]]
+    modId="apexcompatibilities"
+    version="${file.jarVersion}"
+    displayName="ApexCompatibilities"
+    credits="Apex - Programming"
+    authors="ApexStudios"
+    description="Provides compatibility for various mods for all of ApexStudios' mods"
+    logoFile="logo.png"
+    displayURL="https://modrinth.com/mod/apexcore"
+
+[[dependencies.apexcompatibilities]]
+    modId="roughlyenoughitems"
+    type="optional"
+    versionRange="[18.0,19.0)"
+
+[[dependencies.apexcompatibilities]]
+    modId="apexcore"
+    type="required"
+    versionRange="[21.4,)"
+[[dependencies.apexcompatibilities]]
+    modId="itemresistance"
+    type="optional"
+    versionRange="[21.4,)"
+[[dependencies.apexcompatibilities]]
+    modId="infusedfoods"
+    type="optional"
+    versionRange="[21.4,)"
+[[dependencies.apexcompatibilities]]
+    modId="fantasydice"
+    type="optional"
+    versionRange="[21.4,)"
+[[dependencies.apexcompatibilities]]
+    modId="fantasyfurniture"
+    type="optional"
+    versionRange="[21.4,)"
+[[dependencies.apexcompatibilities]]
+    modId="fantasyfurniture_nordic"
+    type="optional"
+    versionRange="[21.4,)"
+
+#[[accessTransformers]]
+#    file="META-INF/accesstransformer.cfg"
+#[[mixins]]
+#   config="META-INF/apexcompatibilities.mixins.json"
