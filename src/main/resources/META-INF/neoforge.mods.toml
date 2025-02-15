@@ -14,6 +14,19 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
     displayURL="https://modrinth.com/mod/apexcore"
 
 [[dependencies.apexcompatibilities]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.4,1.21.5)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.apexcompatibilities]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.4,21.5)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.apexcompatibilities]]
     modId="roughlyenoughitems"
     type="optional"
     versionRange="[18.0,19.0)"
@@ -21,27 +34,27 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
 [[dependencies.apexcompatibilities]]
     modId="apexcore"
     type="required"
-    versionRange="[21.4,)"
+    versionRange="[21.4,21.5)"
 [[dependencies.apexcompatibilities]]
     modId="itemresistance"
     type="optional"
-    versionRange="[21.4,)"
+    versionRange="[21.4,21.5)"
 [[dependencies.apexcompatibilities]]
     modId="infusedfoods"
     type="optional"
-    versionRange="[21.4,)"
+    versionRange="[21.4,21.5)"
 [[dependencies.apexcompatibilities]]
     modId="fantasydice"
     type="optional"
-    versionRange="[21.4,)"
+    versionRange="[21.4,21.5)"
 [[dependencies.apexcompatibilities]]
     modId="fantasyfurniture"
     type="optional"
-    versionRange="[21.4,)"
+    versionRange="[21.4,21.5)"
 [[dependencies.apexcompatibilities]]
     modId="fantasyfurniture_nordic"
     type="optional"
-    versionRange="[21.4,)"
+    versionRange="[21.4,21.5)"
 
 #[[accessTransformers]]
 #    file="META-INF/accesstransformer.cfg"
