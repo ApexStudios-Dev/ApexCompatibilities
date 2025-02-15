@@ -10,7 +10,7 @@ jobs:
         secrets: inherit
         with:
             curseforge_id: "1194521"
-            # modrinth_id: ""
+            modrinth_id: "M29GVxmz"
             release_type: "alpha"
             name: "ApexCompatibilities"
             logo: "https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/new/apexcompatibilities.png"
