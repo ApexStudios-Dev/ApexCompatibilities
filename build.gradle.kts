@@ -1,4 +1,3 @@
-import dev.apexstudios.gradle.ApexExtension
 import dev.apexstudios.gradle.single.ApexSingleExtension
 import me.modmuss50.mpp.ReleaseType
 
@@ -20,12 +19,6 @@ single.withDataGen()
 repositories {
     maven("https://maven.shedaniel.me")
     maven("https://maven.architectury.dev")
-
-    ApexExtension.withApexStudiosGithubMaven(this, "ApexCore")
-    ApexExtension.withApexStudiosGithubMaven(this, "ItemResistance")
-    ApexExtension.withApexStudiosGithubMaven(this, "InfusedFoods")
-    ApexExtension.withApexStudiosGithubMaven(this, "FantasyDice")
-    ApexExtension.withApexStudiosGithubMaven(this, "FantasyFurniture")
 }
 
 dependencies {
