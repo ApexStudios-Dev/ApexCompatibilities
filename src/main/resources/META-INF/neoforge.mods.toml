@@ -30,31 +30,52 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
     modId="roughlyenoughitems"
     type="optional"
     versionRange="[18.0,19.0)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="nfn13YXA"
+        curseforge="310111"
 
 [[dependencies.apexcompatibilities]]
     modId="apexcore"
     type="required"
     versionRange="[21.4,21.5)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="xl3myxch"
+        curseforge="550778"
 [[dependencies.apexcompatibilities]]
     modId="itemresistance"
     type="optional"
     versionRange="[21.4,21.5)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="XDyegkJL"
+        curseforge="416161"
 [[dependencies.apexcompatibilities]]
     modId="infusedfoods"
     type="optional"
     versionRange="[21.4,21.5)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="QinxcGwM"
+        curseforge="629292"
 [[dependencies.apexcompatibilities]]
     modId="fantasydice"
     type="optional"
     versionRange="[21.4,21.5)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="hPeyEJEZ"
+        curseforge="573867"
 [[dependencies.apexcompatibilities]]
     modId="fantasyfurniture"
     type="optional"
     versionRange="[21.4,21.5)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="A0nfCqYw"
+        curseforge="579564"
 [[dependencies.apexcompatibilities]]
     modId="fantasyfurniture_nordic"
     type="optional"
     versionRange="[21.4,21.5)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="DIHzMa8h"
+        curseforge="1191799"
 
 #[[accessTransformers]]
 #    file="META-INF/accesstransformer.cfg"
