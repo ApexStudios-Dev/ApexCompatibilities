@@ -25,37 +25,22 @@ dependencies {
     includeMod(libs.infusedfoods, true, false, false)
     includeMod(libs.fantasydice, true, false, false)
 
-    includeMod(libs.fantasyfurniture, true, true, false) {
-        requireCapability("dev.apexstudios:nordic")
-    }
+    includeMod(libs.fantasyfurniture.asProvider(), true, true, false)
+    includeMod(libs.fantasyfurniture.nordic, true, false, false)
+    includeMod(libs.fantasyfurniture.venthyr, true, false, false)
 
     implementation(libs.rei)
     compileOnly(libs.rei.api)
 }
 
-fun includeMod(mod: Provider<MinimalExternalModuleDependency>, comple: Boolean = false, at: Boolean = false, injection: Boolean = false, caps: Action<ModuleDependencyCapabilitiesHandler> = Action { }) {
+fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false, injection: Boolean = false) {
     dependencies {
-        if(comple) {
+        if(compile)
             compileOnly(mod)
-            compileOnly(mod) {
-                capabilities {
-                    caps.execute(this)
-                }
-            }
-        } else {
+        else
             implementation(mod)
-            implementation(mod) {
-                capabilities {
-                    caps.execute(this)
-                }
-            }
-        }
 
-        "dataImplementation"(mod) {
-            capabilities {
-                caps.execute(this)
-            }
-        }
+        "dataImplementation"(mod)
 
         if(at)
             accessTransformers(mod)

@@ -30,6 +30,8 @@ dependencyResolutionManagement {
         library("infusedfoods", "dev.apexstudios", "infusedfoods").versionRef("apexstudios")
         library("fantasydice", "dev.apexstudios", "fantasydice").versionRef("apexstudios")
         library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("apexstudios")
+        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").versionRef("apexstudios")
+        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").versionRef("apexstudios")
 
         version("rei") {
             strictly("[18.0,19.0)")
