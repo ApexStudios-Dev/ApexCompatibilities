@@ -5,6 +5,7 @@ import dev.apexstudios.apexcompatibilities.CompatManager;
 import dev.apexstudios.apexcompatibilities.rei.dice.FantasyDiceReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.FantasyFurnitureReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.NordicFurnitureSetReiClientSetup;
+import dev.apexstudios.apexcompatibilities.rei.furniture.VenthyrFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.infused.InfusedFoodsReiClientSetup;
 import me.shedaniel.rei.api.client.config.addon.ConfigAddonRegistry;
 import me.shedaniel.rei.api.client.entry.filtering.base.BasicFilteringRule;
@@ -29,6 +30,7 @@ public final class ReiClientSetup implements REIClientPlugin {
             .with(ApexCompatibilities.FANTASY_DICE, FantasyDiceReiClientSetup::new)
             .with(ApexCompatibilities.FANTASY_FURNITURE, FantasyFurnitureReiClientSetup::new)
             .with(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, NordicFurnitureSetReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE_VENTHYR, VenthyrFurnitureSetReiClientSetup::new)
     );
 
     @Override
