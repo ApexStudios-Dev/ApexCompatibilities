@@ -1,11 +1,9 @@
 import dev.apexstudios.gradle.single.ApexSingleExtension
-import me.modmuss50.mpp.ReleaseType
 
 plugins {
     id("apex-conventions.neoforge")
     id("apex-conventions.immaculate")
     id("apex-conventions.maven-publishing")
-    id("apex-conventions.mod-publishing")
 }
 
 group = "dev.apexstudios"
@@ -33,19 +31,6 @@ dependencies {
 
     implementation(libs.rei)
     compileOnly(libs.rei.api)
-}
-
-publishMods {
-    type = ReleaseType.ALPHA
-
-//    modrinth {
-//        projectId = "xl3myxch"
-//    }
-
-    curseforge {
-        projectId = "1194521"
-        projectSlug = "apexcompatibilities"
-    }
 }
 
 fun includeMod(mod: Provider<MinimalExternalModuleDependency>, comple: Boolean = false, at: Boolean = false, injection: Boolean = false, caps: Action<ModuleDependencyCapabilitiesHandler> = Action { }) {
