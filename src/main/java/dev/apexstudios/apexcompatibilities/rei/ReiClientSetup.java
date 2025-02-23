@@ -1,12 +1,12 @@
 package dev.apexstudios.apexcompatibilities.rei;
 
-import com.google.common.base.Suppliers;
+import dev.apexstudios.apexcompatibilities.ApexCompatibilities;
+import dev.apexstudios.apexcompatibilities.CompatManager;
 import dev.apexstudios.apexcompatibilities.rei.dice.FantasyDiceReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.FantasyFurnitureReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.NordicFurnitureSetReiClientSetup;
+import dev.apexstudios.apexcompatibilities.rei.furniture.VenthyrFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.infused.InfusedFoodsReiClientSetup;
-import java.util.Map;
-import java.util.function.Supplier;
 import me.shedaniel.rei.api.client.config.addon.ConfigAddonRegistry;
 import me.shedaniel.rei.api.client.entry.filtering.base.BasicFilteringRule;
 import me.shedaniel.rei.api.client.entry.renderer.EntryRendererRegistry;
@@ -25,75 +25,76 @@ import me.shedaniel.rei.forge.REIPluginClient;
 
 @REIPluginClient
 public final class ReiClientSetup implements REIClientPlugin {
-    private static final Map<String, Supplier<? extends REIClientPlugin>> MODS = Map.of(
-            "infusedfoods", Suppliers.memoize(InfusedFoodsReiClientSetup::new),
-            "fantasydice", Suppliers.memoize(FantasyDiceReiClientSetup::new),
-            "fantasyfurniture", Suppliers.memoize(FantasyFurnitureReiClientSetup::new),
-            "fantasyfurniture_nordic", Suppliers.memoize(NordicFurnitureSetReiClientSetup::new)
+    private final CompatManager<REIClientPlugin> manager = CompatManager.create(REIClientPlugin.class, builder -> builder
+            .with(ApexCompatibilities.INFUSED_FOODS, InfusedFoodsReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_DICE, FantasyDiceReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE, FantasyFurnitureReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, NordicFurnitureSetReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE_VENTHYR, VenthyrFurnitureSetReiClientSetup::new)
     );
 
     @Override
     public void registerEntryRenderers(EntryRendererRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerEntryRenderers(registry));
+        manager.forEach(compat -> compat.registerEntryRenderers(registry));
     }
 
     @Override
     public void registerCategories(CategoryRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerCategories(registry));
+        manager.forEach(compat -> compat.registerCategories(registry));
     }
 
     @Override
     public void registerDisplays(DisplayRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerDisplays(registry));
+        manager.forEach(compat -> compat.registerDisplays(registry));
     }
 
     @Override
     public void registerScreens(ScreenRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerScreens(registry));
+        manager.forEach(compat -> compat.registerScreens(registry));
     }
 
     @Override
     public void registerExclusionZones(ExclusionZones zones) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerExclusionZones(zones));
+        manager.forEach(compat -> compat.registerExclusionZones(zones));
     }
 
     @Override
     public void registerEntries(EntryRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerEntries(registry));
+        manager.forEach(compat -> compat.registerEntries(registry));
     }
 
     @Override
     public void registerBasicEntryFiltering(BasicFilteringRule<?> rule) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerBasicEntryFiltering(rule));
+        manager.forEach(compat -> compat.registerBasicEntryFiltering(rule));
     }
 
     @Override
     public void registerCollapsibleEntries(CollapsibleEntryRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerCollapsibleEntries(registry));
+        manager.forEach(compat -> compat.registerCollapsibleEntries(registry));
     }
 
     @Override
     public void registerFavorites(FavoriteEntryType.Registry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerFavorites(registry));
+        manager.forEach(compat -> compat.registerFavorites(registry));
     }
 
     @Override
     public void registerSubsets(SubsetsRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerSubsets(registry));
+        manager.forEach(compat -> compat.registerSubsets(registry));
     }
 
     @Override
     public void registerTransferHandlers(TransferHandlerRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerTransferHandlers(registry));
+        manager.forEach(compat -> compat.registerTransferHandlers(registry));
     }
 
     @Override
     public void registerConfigAddons(ConfigAddonRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerConfigAddons(registry));
+        manager.forEach(compat -> compat.registerConfigAddons(registry));
     }
 
     @Override
     public void registerInputMethods(InputMethodRegistry registry) {
-        ReiServerSetup.setupMod(MODS, setup -> setup.registerInputMethods(registry));
+        manager.forEach(compat -> compat.registerInputMethods(registry));
     }
 }
