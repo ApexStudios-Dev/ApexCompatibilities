@@ -50,7 +50,7 @@ final class FurnitureStationDisplay extends BasicDisplay {
         return new FurnitureStationDisplay(
                 List.of(
                         EntryIngredients.ofIngredient(recipe.planks()),
-                        EntryIngredients.ofIngredient(recipe.wool()),
+                        recipe.wool().map(EntryIngredients::ofIngredient).orElseGet(EntryIngredient::empty),
                         EntryIngredients.ofIngredient(recipe.bindingAgent())
                 ),
                 List.of(EntryIngredients.of(recipe.result())),
