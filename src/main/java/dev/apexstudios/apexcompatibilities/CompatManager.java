@@ -19,7 +19,7 @@ public final class CompatManager<TBase> implements Iterable<TBase> {
 
         builder.mods.forEach((modId, factory) -> {
             if(modList.isLoaded(modId))
-                mods.put(modId, factory.get());
+                mods.put(modId, factory.get().get());
         });
 
         this.mods = Multimaps.unmodifiableMultimap(mods);
@@ -46,15 +46,15 @@ public final class CompatManager<TBase> implements Iterable<TBase> {
     }
 
     public static final class Builder<TBase> {
-        private final Multimap<String, Supplier<? extends TBase>> mods = HashMultimap.create();
+        private final Multimap<String, Supplier<Supplier<? extends TBase>>> mods = HashMultimap.create();
 
-        public Builder<TBase> with(String modId, Supplier<? extends TBase> factory) {
+        public Builder<TBase> with(String modId, Supplier<Supplier<? extends TBase>> factory) {
             mods.put(modId, factory);
             return this;
         }
 
         @SafeVarargs
-        public final Builder<TBase> with(String modId, Supplier<? extends TBase> factory, Supplier<? extends TBase>... factories) {
+        public final Builder<TBase> with(String modId, Supplier<Supplier<? extends TBase>> factory, Supplier<Supplier<? extends TBase>>... factories) {
             with(modId, factory);
 
             for(var other : factories) {

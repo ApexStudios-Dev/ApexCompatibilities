@@ -26,11 +26,11 @@ import me.shedaniel.rei.forge.REIPluginClient;
 @REIPluginClient
 public final class ReiClientSetup implements REIClientPlugin {
     private final CompatManager<REIClientPlugin> manager = CompatManager.create(builder -> builder
-            .with(ApexCompatibilities.INFUSED_FOODS, InfusedFoodsReiClientSetup::new)
-            .with(ApexCompatibilities.FANTASY_DICE, FantasyDiceReiClientSetup::new)
-            .with(ApexCompatibilities.FANTASY_FURNITURE, FantasyFurnitureReiClientSetup::new)
-            .with(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, NordicFurnitureSetReiClientSetup::new)
-            .with(ApexCompatibilities.FANTASY_FURNITURE_VENTHYR, VenthyrFurnitureSetReiClientSetup::new)
+            .with(ApexCompatibilities.INFUSED_FOODS, () -> InfusedFoodsReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_DICE, () -> FantasyDiceReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE, () -> FantasyFurnitureReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, () -> NordicFurnitureSetReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE_VENTHYR, () -> VenthyrFurnitureSetReiClientSetup::new)
     );
 
     @Override
