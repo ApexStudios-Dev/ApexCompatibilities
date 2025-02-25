@@ -18,11 +18,10 @@ import me.shedaniel.rei.forge.REIPluginCommon;
 
 @REIPluginCommon
 public final class ReiServerSetup implements REICommonPlugin {
-    private final CompatManager<REICommonPlugin> manager = CompatManager.create(REICommonPlugin.class, builder -> builder
-                    .with(ApexCompatibilities.INFUSED_FOODS, InfusedFoodsReiServerSetup::new)
-                    .with(ApexCompatibilities.FANTASY_DICE, FantasyDiceReiServerSetup::new)
-                    .with(ApexCompatibilities.FANTASY_FURNITURE, FantasyFurnitureReiServerSetup::new)
-                    // .with(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, NordicFurnitureSetReiSetup::new)
+    private final CompatManager<REICommonPlugin> manager = CompatManager.create(builder -> builder
+                    .with(ApexCompatibilities.INFUSED_FOODS, () -> InfusedFoodsReiServerSetup::new)
+                    .with(ApexCompatibilities.FANTASY_DICE, () -> FantasyDiceReiServerSetup::new)
+                    .with(ApexCompatibilities.FANTASY_FURNITURE, () -> FantasyFurnitureReiServerSetup::new)
     );
 
     @Override
