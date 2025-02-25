@@ -1,8 +1,4 @@
 pluginManagement {
-    if(file("../ApexGradle/build.gradle.kts").exists()) {
-        includeBuild("../ApexGradle")
-    }
-
     repositories {
         gradlePluginPortal()
         mavenLocal()
@@ -21,22 +17,17 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        version("apexstudios") {
-            strictly("[21.4.0,21.5.0)")
-        }
+        library("apexcore", "dev.apexstudios", "apexcore").version("21.4.19")
+        library("itemresistance", "dev.apexstudios", "itemresistance").version("21.4.4")
+        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.4.15")
+        library("fantasydice", "dev.apexstudios", "fantasydice").version("21.4.5")
 
-        library("apexcore", "dev.apexstudios", "apexcore").versionRef("apexstudios")
-        library("itemresistance", "dev.apexstudios", "itemresistance").versionRef("apexstudios")
-        library("infusedfoods", "dev.apexstudios", "infusedfoods").versionRef("apexstudios")
-        library("fantasydice", "dev.apexstudios", "fantasydice").versionRef("apexstudios")
-        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("apexstudios")
-        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").versionRef("apexstudios")
-        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").versionRef("apexstudios")
+        version("fantasyfurniture", "21.4.67")
+        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
+        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").versionRef("fantasyfurniture")
+        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").versionRef("fantasyfurniture")
 
-        version("rei") {
-            strictly("[18.0,19.0)")
-        }
-
+        version("rei", "18.0.800")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
         library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api-neoforge").versionRef("rei")
         library("rei-default-plugin", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
