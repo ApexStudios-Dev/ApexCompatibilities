@@ -1,28 +1,28 @@
 package dev.apexstudios.apexcompatibilities;
 
-import com.google.common.collect.Maps;
-import com.mojang.logging.LogUtils;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import net.minecraft.Util;
-import org.slf4j.Logger;
+import net.neoforged.fml.ModList;
 
 public final class CompatManager<TBase> implements Iterable<TBase> {
-    private static final Logger LOGGER = LogUtils.getLogger();
-
-    private final Map<String, TBase> mods;
+    private final Multimap<String, TBase> mods;
 
     private CompatManager(Builder<TBase> builder) {
-        mods = builder.mods
-                .entrySet()
-                .stream()
-                .peek(entry -> LOGGER.debug("Registering {} compat: {}", builder.baseType.getSimpleName(), entry.getKey()))
-                .collect(Collectors.toUnmodifiableMap(Map.Entry::getKey, entry -> entry.getValue().get()));
+        var mods = HashMultimap.<String, TBase>create();
+        var modList = ModList.get();
+
+        builder.mods.forEach((modId, factory) -> {
+            if(modList.isLoaded(modId))
+                mods.put(modId, factory.get());
+        });
+
+        this.mods = Multimaps.unmodifiableMultimap(mods);
     }
 
     @Override
@@ -39,23 +39,27 @@ public final class CompatManager<TBase> implements Iterable<TBase> {
         return mods.values().stream();
     }
 
-    public static <TBase> CompatManager<TBase> create(Class<TBase> baseType, Consumer<Builder<TBase>> consumer) {
-        var builder = new Builder<>(baseType);
+    public static <TBase> CompatManager<TBase> create(Consumer<Builder<TBase>> consumer) {
+        var builder = new Builder<TBase>();
         consumer.accept(builder);
         return new CompatManager<>(builder);
     }
 
     public static final class Builder<TBase> {
-        private final Class<TBase> baseType;
-        private final Map<String, Supplier<? extends TBase>> mods = Maps.newHashMap();
-
-        private Builder(Class<TBase> baseType) {
-            this.baseType = baseType;
-        }
+        private final Multimap<String, Supplier<? extends TBase>> mods = HashMultimap.create();
 
         public Builder<TBase> with(String modId, Supplier<? extends TBase> factory) {
-            if(mods.putIfAbsent(modId, factory) != null)
-                throw Util.pauseInIde(new IllegalStateException("Duplicate " + baseType.getSimpleName() + " compat registration: " + modId));
+            mods.put(modId, factory);
+            return this;
+        }
+
+        @SafeVarargs
+        public final Builder<TBase> with(String modId, Supplier<? extends TBase> factory, Supplier<? extends TBase>... factories) {
+            with(modId, factory);
+
+            for(var other : factories) {
+                with(modId, other);
+            }
 
             return this;
         }
