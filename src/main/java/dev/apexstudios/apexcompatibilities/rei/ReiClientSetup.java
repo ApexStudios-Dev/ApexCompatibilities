@@ -5,6 +5,7 @@ import dev.apexstudios.apexcompatibilities.CompatManager;
 import dev.apexstudios.apexcompatibilities.rei.dice.FantasyDiceReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.BoneSkeletonFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.BoneWitherFurnitureSetReiClientSetup;
+import dev.apexstudios.apexcompatibilities.rei.furniture.DunmerFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.FantasyFurnitureReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.NordicFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.VenthyrFurnitureSetReiClientSetup;
@@ -34,6 +35,7 @@ public final class ReiClientSetup implements REIClientPlugin {
             .with(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, () -> NordicFurnitureSetReiClientSetup::new)
             .with(ApexCompatibilities.FANTASY_FURNITURE_VENTHYR, () -> VenthyrFurnitureSetReiClientSetup::new)
             .with(ApexCompatibilities.FANTASY_FURNITURE_BONE, () -> BoneSkeletonFurnitureSetReiClientSetup::new, () -> BoneWitherFurnitureSetReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE_DUNMER, () -> DunmerFurnitureSetReiClientSetup::new)
     );
 
     @Override

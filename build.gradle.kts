@@ -29,6 +29,7 @@ dependencies {
     includeMod(libs.fantasyfurniture.nordic, true, false, false)
     includeMod(libs.fantasyfurniture.venthyr, true, false, false)
     includeMod(libs.fantasyfurniture.bone, true, false, false)
+    includeMod(libs.fantasyfurniture.dunmer, true, false, false)
 
     implementation(libs.rei)
     compileOnly(libs.rei.api)
