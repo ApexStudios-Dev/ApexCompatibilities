@@ -30,7 +30,7 @@ public class FurnitureSetReiClientSetup implements REIClientPlugin {
     @Override
     public void registerCollapsibleEntries(CollapsibleEntryRegistry registry) {
         registry.group(
-                ResourceLocation.fromNamespaceAndPath(furnitureSet.ownerNamespace(), "rei_group"),
+                ResourceLocation.fromNamespaceAndPath(furnitureSet.ownerNamespace(), "rei_group/" + furnitureSet.name()),
                 Component.literal(englishName),
                 VanillaEntryTypes.ITEM,
                 entry -> furnitureSet.is(entry.getValue())
