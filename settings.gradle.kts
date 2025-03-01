@@ -22,10 +22,11 @@ dependencyResolutionManagement {
         library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.4.15")
         library("fantasydice", "dev.apexstudios", "fantasydice").version("21.4.5")
 
-        version("fantasyfurniture", "21.4.67")
+        version("fantasyfurniture", "21.4.86")
         library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
         library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").versionRef("fantasyfurniture")
         library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").versionRef("fantasyfurniture")
+        library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").versionRef("fantasyfurniture")
 
         version("rei", "18.0.800")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
