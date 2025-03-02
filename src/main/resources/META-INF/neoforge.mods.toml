@@ -90,6 +90,13 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
     [dependencies.apexcompatibilities.mc-publish]
         modrinth="oJ4TI49S"
         curseforge="1209697"
+[[dependencies.apexcompatibilities]]
+    modId="fantasyfurniture_dunmer"
+    type="optional"
+    versionRange="[21.4,21.5)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="Bs7e2IyQ"
+        curseforge="1209702"
 
 #[[accessTransformers]]
 #    file="META-INF/accesstransformer.cfg"
