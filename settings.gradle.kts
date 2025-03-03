@@ -17,7 +17,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        library("apexcore", "dev.apexstudios", "apexcore").version("21.4.19")
+        library("apexcore", "dev.apexstudios", "apexcore").version("21.4.20")
         library("itemresistance", "dev.apexstudios", "itemresistance").version("21.4.4")
         library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.4.15")
         library("fantasydice", "dev.apexstudios", "fantasydice").version("21.4.5")
