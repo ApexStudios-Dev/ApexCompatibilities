@@ -1,3 +1,5 @@
+name: Publish
+
 on:
     workflow_dispatch:
     push:
@@ -6,13 +8,14 @@ on:
 
 jobs:
     publish:
+        name: Publish ApexCompatibilities
         uses: ApexStudios-Dev/.github/.github/workflows/publish-mod.yml@master
         secrets: inherit
         with:
-            curseforge_id: "1194521"
-            modrinth_id: "M29GVxmz"
-            release_type: "alpha"
-            name: "ApexCompatibilities"
-            logo: "https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/new/apexcompatibilities.png"
-            color: "3948743" # 3C40C7
+            display_name: ApexCompatibilities
+            logo_url: https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/new/apexcompatibilities.png
+            color: 0x3C40C7
+            release_type: alpha
             artifact_id: apexcompatibilities
+            curseforge_id: "1194521"
+            modrinth_id: M29GVxmz
