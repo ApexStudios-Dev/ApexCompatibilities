@@ -9,6 +9,7 @@ import dev.apexstudios.apexcompatibilities.rei.furniture.DunmerFurnitureSetReiCl
 import dev.apexstudios.apexcompatibilities.rei.furniture.FantasyFurnitureReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.NecrolordFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.NordicFurnitureSetReiClientSetup;
+import dev.apexstudios.apexcompatibilities.rei.furniture.RoyalFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.furniture.VenthyrFurnitureSetReiClientSetup;
 import dev.apexstudios.apexcompatibilities.rei.infused.InfusedFoodsReiClientSetup;
 import me.shedaniel.rei.api.client.config.addon.ConfigAddonRegistry;
@@ -38,6 +39,7 @@ public final class ReiClientSetup implements REIClientPlugin {
             .with(ApexCompatibilities.FANTASY_FURNITURE_BONE, () -> BoneSkeletonFurnitureSetReiClientSetup::new, () -> BoneWitherFurnitureSetReiClientSetup::new)
             .with(ApexCompatibilities.FANTASY_FURNITURE_DUNMER, () -> DunmerFurnitureSetReiClientSetup::new)
             .with(ApexCompatibilities.FANTASY_FURNITURE_NECROLORD, () -> NecrolordFurnitureSetReiClientSetup::new)
+            .with(ApexCompatibilities.FANTASY_FURNITURE_ROYAL, () -> RoyalFurnitureSetReiClientSetup::new)
     );
 
     @Override
