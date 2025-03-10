@@ -1,0 +1,100 @@
+name: Test PR
+
+on:
+  pull_request:
+    types:
+      - synchronize
+      - opened
+      - ready_for_review
+      - reopened
+
+jobs:
+  compile-mod:
+    name: Compile Mod
+    runs-on: apexstudios
+    steps:
+      - name: Checkout Repository
+        id: checkout
+        uses: ApexStudios-Dev/.github/actions/checkout@master
+
+      - name: Setup Java
+        uses: ApexStudios-Dev/.github/actions/setup-java@master
+
+      - name: Setup Gradle
+        uses: ApexStudios-Dev/.github/actions/setup-gradle@master
+
+      - name: Build with Gradle
+        run: ./gradlew :build
+        env:
+          VERSION: ${{ steps.checkout.outputs.version }}
+
+      - name: Delete unwanted artifacts
+        if: success()
+        run: rm -rf ./build/libs/*-data*jar ./build/libs/*-sources*jar
+
+      - name: Upload Mod
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-artifacts
+          path: ./build/libs/*-${{ steps.checkout.outputs.version }}.jar
+          if-no-files-found: error
+
+  download-dependencies:
+    name: Download Dependencies
+    needs: compile-mod
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Download Mod
+        uses: actions/download-artifact@v4
+        with:
+          name: production-artifacts
+
+      - name: Download Dependencies
+        run: |
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/apexcore/$APEXCORE_VERSION/apexcore-$APEXCORE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/itemresistance/$ITEMRESISTANCE_VERSION/itemresistance-$ITEMRESISTANCE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/infusedfoods/$INFUSEDFOODS_VERSION/infusedfoods-$INFUSEDFOODS_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasydice/$FANTASYDICE_VERSION/fantasydice-$FANTASYDICE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture/$FANTASYFURNITURE_VERSION/fantasyfurniture-$FANTASYFURNITURE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-nordic/$FANTASYFURNITURE_NORDIC_VERSION/fantasyfurniture-nordic-$FANTASYFURNITURE_NORDIC_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-venthyr/$FANTASYFURNITURE_VENTHYR_VERSION/fantasyfurniture-venthyr-$FANTASYFURNITURE_VENTHYR_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-bone/$FANTASYFURNITURE_BONE_VERSION/fantasyfurniture-bone-$FANTASYFURNITURE_BONE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-dunmer/$FANTASYFURNITURE_DUNMER_VERSION/fantasyfurniture-dunmer-$FANTASYFURNITURE_DUNMER_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-necrolord/$FANTASYFURNITURE_NECROLORD_VERSION/fantasyfurniture-necrolord-$FANTASYFURNITURE_NECROLORD_VERSION.jar
+          
+          wget https://maven.shedaniel.me/me/shedaniel/RoughlyEnoughItems-neoforge/$REI_VERSION/RoughlyEnoughItems-neoforge-$REI_VERSION.jar
+          wget https://maven.shedaniel.me/me/shedaniel/cloth/cloth-config-neoforge/$CLOTHCONFIG_VERSION/cloth-config-neoforge-$CLOTHCONFIG_VERSION-neoforge.jar
+          wget https://maven.architectury.dev/dev/architectury/architectury-neoforge/$ARCH_VERSION/architectury-neoforge-$ARCH_VERSION.jar
+        env:
+          APEXCORE_VERSION: 21.4.23
+          ITEMRESISTANCE_VERSION: 21.4.4
+          INFUSEDFOODS_VERSION: 21.4.15
+          FANTASYDICE_VERSION: 21.4.5
+          FANTASYFURNITURE_VERSION: 21.4.110
+          FANTASYFURNITURE_NORDIC_VERSION: 21.4.91
+          FANTASYFURNITURE_VENTHYR_VERSION: 21.4.91
+          FANTASYFURNITURE_BONE_VERSION: 21.4.91
+          FANTASYFURNITURE_DUNMER_VERSION: 21.4.91
+          FANTASYFURNITURE_NECROLORD_VERSION: 21.4.110
+
+          REI_VERSION: 18.0.800
+          CLOTHCONFIG_VERSION: 17.0.144
+          ARCH_VERSION: 15.0.2
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-artifacts
+          path: '*.jar'
+          if-no-files-found: error
+          overwrite: true
+
+  test-production-server:
+    name: Test Production Server
+    uses: ApexStudios-Dev/.github/.github/workflows/test-production-server.yml@master
+    needs: download-dependencies
+    if: success()
+    with:
+      neoforge_version: 21.4.96-beta

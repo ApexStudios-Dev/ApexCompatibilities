@@ -17,17 +17,17 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        library("apexcore", "dev.apexstudios", "apexcore").version("21.4.20")
+        library("apexcore", "dev.apexstudios", "apexcore").version("21.4.23")
         library("itemresistance", "dev.apexstudios", "itemresistance").version("21.4.4")
         library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.4.15")
         library("fantasydice", "dev.apexstudios", "fantasydice").version("21.4.5")
 
-        version("fantasyfurniture", "21.4.91")
-        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
-        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").versionRef("fantasyfurniture")
-        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").versionRef("fantasyfurniture")
-        library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").versionRef("fantasyfurniture")
-        library("fantasyfurniture_dunmer", "dev.apexstudios", "fantasyfurniture-dunmer").versionRef("fantasyfurniture")
+        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").version("21.4.110")
+        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").version("21.4.91")
+        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").version("21.4.91")
+        library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").version("21.4.91")
+        library("fantasyfurniture_dunmer", "dev.apexstudios", "fantasyfurniture-dunmer").version("21.4.91")
+        library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-necrolord").version("21.4.110")
 
         version("rei", "18.0.800")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
