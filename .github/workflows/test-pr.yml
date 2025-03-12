@@ -69,7 +69,7 @@ jobs:
           wget https://maven.shedaniel.me/me/shedaniel/cloth/cloth-config-neoforge/$CLOTHCONFIG_VERSION/cloth-config-neoforge-$CLOTHCONFIG_VERSION-neoforge.jar
           wget https://maven.architectury.dev/dev/architectury/architectury-neoforge/$ARCH_VERSION/architectury-neoforge-$ARCH_VERSION.jar
         env:
-          APEXCORE_VERSION: 21.4.23
+          APEXCORE_VERSION: 21.4.24
           ITEMRESISTANCE_VERSION: 21.4.4
           INFUSEDFOODS_VERSION: 21.4.15
           FANTASYDICE_VERSION: 21.4.5
