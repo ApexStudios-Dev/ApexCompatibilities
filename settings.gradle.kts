@@ -28,7 +28,7 @@ dependencyResolutionManagement {
         library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").version("21.4.91")
         library("fantasyfurniture_dunmer", "dev.apexstudios", "fantasyfurniture-dunmer").version("21.4.111")
         library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-necrolord").version("21.4.110")
-        library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-royal").version("21.4.111")
+        library("fantasyfurniture_royal", "dev.apexstudios", "fantasyfurniture-royal").version("21.4.111")
 
         version("rei", "18.0.800")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
