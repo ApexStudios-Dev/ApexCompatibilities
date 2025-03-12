@@ -15,4 +15,5 @@ public interface ApexCompatibilities {
     String FANTASY_FURNITURE_BONE = FANTASY_FURNITURE + "_bone";
     String FANTASY_FURNITURE_DUNMER = FANTASY_FURNITURE + "_dunmer";
     String FANTASY_FURNITURE_NECROLORD = FANTASY_FURNITURE + "_necrolord";
+    String FANTASY_FURNITURE_ROYAL = FANTASY_FURNITURE + "_royal";
 }
