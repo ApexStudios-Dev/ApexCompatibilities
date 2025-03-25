@@ -53,33 +53,33 @@ jobs:
 
       - name: Download Dependencies
         run: |
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/apexcore/$APEXCORE_VERSION/apexcore-$APEXCORE_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/itemresistance/$ITEMRESISTANCE_VERSION/itemresistance-$ITEMRESISTANCE_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/infusedfoods/$INFUSEDFOODS_VERSION/infusedfoods-$INFUSEDFOODS_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasydice/$FANTASYDICE_VERSION/fantasydice-$FANTASYDICE_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture/$FANTASYFURNITURE_VERSION/fantasyfurniture-$FANTASYFURNITURE_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-nordic/$FANTASYFURNITURE_NORDIC_VERSION/fantasyfurniture-nordic-$FANTASYFURNITURE_NORDIC_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-venthyr/$FANTASYFURNITURE_VENTHYR_VERSION/fantasyfurniture-venthyr-$FANTASYFURNITURE_VENTHYR_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-bone/$FANTASYFURNITURE_BONE_VERSION/fantasyfurniture-bone-$FANTASYFURNITURE_BONE_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-dunmer/$FANTASYFURNITURE_DUNMER_VERSION/fantasyfurniture-dunmer-$FANTASYFURNITURE_DUNMER_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-necrolord/$FANTASYFURNITURE_NECROLORD_VERSION/fantasyfurniture-necrolord-$FANTASYFURNITURE_NECROLORD_VERSION.jar
-          wget https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-royal/$FANTASYFURNITURE_ROYAL_VERSION/fantasyfurniture-royal-$FANTASYFURNITURE_ROYAL_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/apexcore/$APEXCORE_VERSION/apexcore-$APEXCORE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/itemresistance/$ITEMRESISTANCE_VERSION/itemresistance-$ITEMRESISTANCE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/infusedfoods/$INFUSEDFOODS_VERSION/infusedfoods-$INFUSEDFOODS_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasydice/$FANTASYDICE_VERSION/fantasydice-$FANTASYDICE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture/$FANTASYFURNITURE_VERSION/fantasyfurniture-$FANTASYFURNITURE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-nordic/$FANTASYFURNITURE_NORDIC_VERSION/fantasyfurniture-nordic-$FANTASYFURNITURE_NORDIC_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-venthyr/$FANTASYFURNITURE_VENTHYR_VERSION/fantasyfurniture-venthyr-$FANTASYFURNITURE_VENTHYR_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-bone/$FANTASYFURNITURE_BONE_VERSION/fantasyfurniture-bone-$FANTASYFURNITURE_BONE_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-dunmer/$FANTASYFURNITURE_DUNMER_VERSION/fantasyfurniture-dunmer-$FANTASYFURNITURE_DUNMER_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-necrolord/$FANTASYFURNITURE_NECROLORD_VERSION/fantasyfurniture-necrolord-$FANTASYFURNITURE_NECROLORD_VERSION.jar
+          wget https://maven.apexstudios.dev/releases/dev/apexstudios/fantasyfurniture-royal/$FANTASYFURNITURE_ROYAL_VERSION/fantasyfurniture-royal-$FANTASYFURNITURE_ROYAL_VERSION.jar
           
           wget https://maven.shedaniel.me/me/shedaniel/RoughlyEnoughItems-neoforge/$REI_VERSION/RoughlyEnoughItems-neoforge-$REI_VERSION.jar
           wget https://maven.shedaniel.me/me/shedaniel/cloth/cloth-config-neoforge/$CLOTHCONFIG_VERSION/cloth-config-neoforge-$CLOTHCONFIG_VERSION-neoforge.jar
           wget https://maven.architectury.dev/dev/architectury/architectury-neoforge/$ARCH_VERSION/architectury-neoforge-$ARCH_VERSION.jar
         env:
-          APEXCORE_VERSION: 21.4.34-beta-pr-13
-          ITEMRESISTANCE_VERSION: 21.4.25-beta-pr-8
-          INFUSEDFOODS_VERSION: 21.4.29-beta-pr-8
-          FANTASYDICE_VERSION: 21.4.27-beta-pr-7
-          FANTASYFURNITURE_VERSION: 21.4.125-beta-pr-31
-          FANTASYFURNITURE_NORDIC_VERSION: 21.4.125-beta-pr-31
-          FANTASYFURNITURE_VENTHYR_VERSION: 21.4.125-beta-pr-31
-          FANTASYFURNITURE_BONE_VERSION: 21.4.125-beta-pr-31
-          FANTASYFURNITURE_DUNMER_VERSION: 21.4.125-beta-pr-31
-          FANTASYFURNITURE_NECROLORD_VERSION: 21.4.125-beta-pr-31
-          FANTASYFURNITURE_ROYAL_VERSION: 21.4.125-beta-pr-31
+          APEXCORE_VERSION: 21.5.0
+          ITEMRESISTANCE_VERSION: 21.5.0
+          INFUSEDFOODS_VERSION: 21.5.0
+          FANTASYDICE_VERSION: 21.5.0
+          FANTASYFURNITURE_VERSION: 21.5.0
+          FANTASYFURNITURE_NORDIC_VERSION: 21.5.0
+          FANTASYFURNITURE_VENTHYR_VERSION: 21.5.0
+          FANTASYFURNITURE_BONE_VERSION: 21.5.0
+          FANTASYFURNITURE_DUNMER_VERSION: 21.5.0
+          FANTASYFURNITURE_NECROLORD_VERSION: 21.5.0
+          FANTASYFURNITURE_ROYAL_VERSION: 21.5.0
 
           REI_VERSION: 18.0.800
           CLOTHCONFIG_VERSION: 17.0.144
@@ -99,5 +99,4 @@ jobs:
     needs: download-dependencies
     if: success()
     with:
-      neoforge_version: 21.5.0-alpha.1.21.5-rc1.20250321.225134
-      neoforge_maven: 'https://prmaven.neoforged.net/NeoForge/pr2039'
+      neoforge_version: 21.5.0-beta
