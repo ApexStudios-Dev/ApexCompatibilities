@@ -69,21 +69,21 @@ jobs:
           wget https://maven.shedaniel.me/me/shedaniel/cloth/cloth-config-neoforge/$CLOTHCONFIG_VERSION/cloth-config-neoforge-$CLOTHCONFIG_VERSION-neoforge.jar
           wget https://maven.architectury.dev/dev/architectury/architectury-neoforge/$ARCH_VERSION/architectury-neoforge-$ARCH_VERSION.jar
         env:
-          APEXCORE_VERSION: 21.4.24
-          ITEMRESISTANCE_VERSION: 21.4.4
-          INFUSEDFOODS_VERSION: 21.4.15
-          FANTASYDICE_VERSION: 21.4.5
-          FANTASYFURNITURE_VERSION: 21.4.111
-          FANTASYFURNITURE_NORDIC_VERSION: 21.4.91
-          FANTASYFURNITURE_VENTHYR_VERSION: 21.4.91
-          FANTASYFURNITURE_BONE_VERSION: 21.4.91
-          FANTASYFURNITURE_DUNMER_VERSION: 21.4.111
-          FANTASYFURNITURE_NECROLORD_VERSION: 21.4.110
-          FANTASYFURNITURE_ROYAL_VERSION: 21.4.111
+          APEXCORE_VERSION: 21.5.3
+          ITEMRESISTANCE_VERSION: 21.5.1
+          INFUSEDFOODS_VERSION: 21.5.1
+          FANTASYDICE_VERSION: 21.5.1
+          FANTASYFURNITURE_VERSION: 21.5.1
+          FANTASYFURNITURE_NORDIC_VERSION: 21.5.1
+          FANTASYFURNITURE_VENTHYR_VERSION: 21.5.1
+          FANTASYFURNITURE_BONE_VERSION: 21.5.1
+          FANTASYFURNITURE_DUNMER_VERSION: 21.5.1
+          FANTASYFURNITURE_NECROLORD_VERSION: 21.5.1
+          FANTASYFURNITURE_ROYAL_VERSION: 21.5.1
 
-          REI_VERSION: 18.0.800
-          CLOTHCONFIG_VERSION: 17.0.144
-          ARCH_VERSION: 15.0.2
+          REI_VERSION: 19.0.805
+          CLOTHCONFIG_VERSION: 18.0.145
+          ARCH_VERSION: 16.1.4
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
@@ -99,4 +99,4 @@ jobs:
     needs: download-dependencies
     if: success()
     with:
-      neoforge_version: 21.4.96-beta
+      neoforge_version: 21.5.34-beta
