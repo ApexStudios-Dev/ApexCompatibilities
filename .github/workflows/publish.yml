@@ -1,21 +1,21 @@
 name: Publish
 
 on:
-    workflow_dispatch:
-    push:
-        branches: [ "**/main" ]
-        paths: [ "**/src/**" ]
+  workflow_dispatch:
+  push:
+    branches: [ "**/main" ]
+    paths: [ "**/src/**" ]
 
 jobs:
-    publish:
-        name: Publish ApexCompatibilities
-        uses: ApexStudios-Dev/.github/.github/workflows/publish-mod.yml@master
-        secrets: inherit
-        with:
-            display_name: ApexCompatibilities
-            logo_url: https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/new/apexcompatibilities.png
-            color: 0x3C40C7
-            release_type: release
-            artifact_id: apexcompatibilities
-            curseforge_id: "1194521"
-            modrinth_id: M29GVxmz
+  publish:
+    name: Publish ApexCompatibilities
+    uses: ApexStudios-Dev/.github/.github/workflows/publish-mod.yml@master
+    secrets: inherit
+    with:
+      display_name: ApexCompatibilities
+      logo_url: https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/new/apexcompatibilities.png
+      color: 0x3C40C7
+      release_type: release
+      artifact_id: apexcompatibilities
+      curseforge_id: "1194521"
+      modrinth_id: M29GVxmz
