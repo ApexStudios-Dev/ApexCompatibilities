@@ -1,21 +1,29 @@
 name: Publish
 
 on:
+  pull_request:
+    types:
+      - synchronize
+      - opened
+      - ready_for_review
+      - reopened
   workflow_dispatch:
   push:
-    branches: [ "**/main" ]
-    paths: [ "**/src/**" ]
+    branches: [ '**/main' ]
+    paths: [ '**/src/**' ]
 
 jobs:
-  publish:
-    name: Publish ApexCompatibilities
-    uses: ApexStudios-Dev/.github/.github/workflows/publish-mod.yml@master
+  publish-mod:
+    uses: ApexStudios-Dev/.github/.github/workflows/_publish-mod.yml@master
     secrets: inherit
     with:
-      display_name: ApexCompatibilities
-      logo_url: https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/new/apexcompatibilities.png
-      color: 0x3C40C7
-      release_type: release
-      artifact_id: apexcompatibilities
-      curseforge_id: "1194521"
-      modrinth_id: M29GVxmz
+      java-version: 21
+      java-vendor: temurin
+      publish-task: ':publishReleasePublicationToApexStudios-ReleasesRepository'
+      curseforge-id: '835372' # '1194521'
+      modrinth-id: 'EjjiYArZ' # 'M29GVxmz'
+      artifact-id: apexcompatibilities
+      display-name: ApexCompatibilities
+      release-type: release
+      logo-url: 'https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/apexcompatibilities/logo.png'
+      color: 0x3358FA
