@@ -19,5 +19,5 @@ jobs:
       artifact-id: apexcompatibilities
       display-name: ApexCompatibilities
       release-type: release
-      logo-url: 'https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/apexcompatibilities/logo.png'
+      logo-url: 'https://raw.githubusercontent.com/ApexStudios-Dev/.github/refs/heads/master/assets/minecraft/apexcompatibilities/banner.png'
       color: 0x3358FA
