@@ -4,6 +4,6 @@ import dev.apexstudios.fantasyfurniture.nordic.NordicFurnitureSet;
 
 public final class NordicFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
     public NordicFurnitureSetReiClientSetup() {
-        super(NordicFurnitureSet.FURNITURE_SET);
+        super(NordicFurnitureSet.REGISTREE, "Nordic");
     }
 }

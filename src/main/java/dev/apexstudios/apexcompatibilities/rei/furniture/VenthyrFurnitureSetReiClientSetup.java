@@ -4,6 +4,6 @@ import dev.apexstudios.fantasyfurniture.venthyr.VenthyrFurnitureSet;
 
 public final class VenthyrFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
     public VenthyrFurnitureSetReiClientSetup() {
-        super(VenthyrFurnitureSet.FURNITURE_SET);
+        super(VenthyrFurnitureSet.REGISTREE, "Venthyr");
     }
 }

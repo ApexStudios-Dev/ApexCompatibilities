@@ -4,6 +4,6 @@ import dev.apexstudios.fantasyfurniture.royal.RoyalFurnitureSet;
 
 public final class RoyalFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
     public RoyalFurnitureSetReiClientSetup() {
-        super(RoyalFurnitureSet.FURNITURE_SET);
+        super(RoyalFurnitureSet.REGISTREE, "Royal");
     }
 }
