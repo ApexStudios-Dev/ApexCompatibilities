@@ -34,7 +34,7 @@ dependencies {
     includeMod(libs.infusedfoods, true, false)
     includeMod(libs.fantasydice, true, false)
 
-    includeMod(libs.fantasyfurniture.asProvider(), true, true)
+    includeMod(libs.fantasyfurniture.asProvider(), true, false)
     includeMod(libs.fantasyfurniture.nordic, true, false)
     includeMod(libs.fantasyfurniture.venthyr, true, false)
     includeMod(libs.fantasyfurniture.bone, true, false)
