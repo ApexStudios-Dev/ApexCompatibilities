@@ -4,6 +4,6 @@ import apexstudios.fantasyfurniture.bone.WitherFurnitureSet;
 
 public final class BoneWitherFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
     public BoneWitherFurnitureSetReiClientSetup() {
-        super(WitherFurnitureSet.REGISTREE, "Wither");
+        super(WitherFurnitureSet.get().registree, "Wither");
     }
 }
