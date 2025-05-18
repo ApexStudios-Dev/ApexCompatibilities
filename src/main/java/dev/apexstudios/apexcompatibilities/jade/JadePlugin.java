@@ -1,7 +1,6 @@
 package dev.apexstudios.apexcompatibilities.jade;
 
-import dev.apexstudios.apexcore.lib.component.block.BlockComponentHelper;
-import dev.apexstudios.apexcore.lib.component.block.BlockComponentTypes;
+import dev.apexstudios.apexcore.lib.multiblock.MultiBlock;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IWailaClientRegistration;
 import snownee.jade.api.IWailaPlugin;
@@ -16,12 +15,11 @@ public final class JadePlugin implements IWailaPlugin {
                 return accessor;
 
             var blockState = blockAccessor.getBlockState();
-            var multiBlock = BlockComponentHelper.getComponent(blockState, BlockComponentTypes.MULTI_BLOCK);
 
-            if(multiBlock == null)
+            if(!MultiBlock.isMultiBlock(blockState))
                 return accessor;
 
-            var origin = multiBlock.getOrigin(blockAccessor.getPosition(), blockState);
+            var origin = MultiBlock.getOrigin(blockAccessor.getPosition(), blockState);
 
             // redirect multi blocks to origin point for block entity data
             return registration.blockAccessor().from(blockAccessor)
