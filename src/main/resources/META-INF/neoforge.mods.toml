@@ -33,6 +33,13 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
     [dependencies.apexcompatibilities.mc-publish]
         modrinth="nfn13YXA"
         curseforge="310111"
+[[dependencies.apexcompatibilities]]
+    modId="jade"
+    type="optional"
+    versionRange="[18.0,19.0)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="nvQzSEkH"
+        curseforge="324717"
 
 [[dependencies.apexcompatibilities]]
     modId="apexcore"

@@ -35,6 +35,8 @@ dependencyResolutionManagement {
         library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api-neoforge").versionRef("rei")
         library("rei-default-plugin", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
         bundle("rei-api", listOf("rei-api", "rei-default-plugin"))
+
+        library("jade", "maven.modrinth", "jade").version("18.2.0+neoforge")
     }
 }
 

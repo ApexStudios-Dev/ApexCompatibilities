@@ -17,6 +17,12 @@ single.withDataGen()
 repositories {
     maven("https://maven.shedaniel.me")
     maven("https://maven.architectury.dev")
+
+    maven("https://api.modrinth.com/maven") {
+        content {
+            includeGroup("maven.modrinth")
+        }
+    }
 }
 
 dependencies {
@@ -35,6 +41,8 @@ dependencies {
 
     implementation(libs.rei)
     compileOnly(libs.rei.api)
+
+    implementation(libs.jade)
 }
 
 fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false) {
