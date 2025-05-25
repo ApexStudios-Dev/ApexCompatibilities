@@ -3,23 +3,25 @@ package dev.apexstudios.apexcompatibilities;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 import net.neoforged.fml.ModList;
 
-public final class CompatManager<TBase> implements Iterable<TBase> {
+public final class CompatManager<TOwner, TBase> implements Iterable<TBase> {
     private final Multimap<String, TBase> mods;
 
-    private CompatManager(Builder<TBase> builder) {
+    private CompatManager(TOwner owner, Builder<TOwner, TBase> builder) {
         var mods = HashMultimap.<String, TBase>create();
         var modList = ModList.get();
 
         builder.mods.forEach((modId, factory) -> {
             if(modList.isLoaded(modId))
-                mods.put(modId, factory.get().get());
+                mods.put(modId, factory.get().apply(owner));
         });
 
         this.mods = Multimaps.unmodifiableMultimap(mods);
@@ -39,22 +41,41 @@ public final class CompatManager<TBase> implements Iterable<TBase> {
         return mods.values().stream();
     }
 
-    public static <TBase> CompatManager<TBase> create(Consumer<Builder<TBase>> consumer) {
-        var builder = new Builder<TBase>();
+    public static <TOwner, TBase> CompatManager<TOwner, TBase> create(TOwner owner, Consumer<Builder<TOwner, TBase>> consumer) {
+        var builder = new Builder<TOwner, TBase>();
         consumer.accept(builder);
-        return new CompatManager<>(builder);
+        return new CompatManager<>(owner, builder);
     }
 
-    public static final class Builder<TBase> {
-        private final Multimap<String, Supplier<Supplier<? extends TBase>>> mods = HashMultimap.create();
+    public static final class Builder<TOwner, TBase> {
+        private final Multimap<String, Supplier<Function<TOwner, TBase>>> mods = HashMultimap.create();
 
-        public Builder<TBase> with(String modId, Supplier<Supplier<? extends TBase>> factory) {
+        @CanIgnoreReturnValue
+        public Builder<TOwner, TBase> owned(String modId, Supplier<Function<TOwner, TBase>> factory) {
             mods.put(modId, factory);
             return this;
         }
 
         @SafeVarargs
-        public final Builder<TBase> with(String modId, Supplier<Supplier<? extends TBase>> factory, Supplier<Supplier<? extends TBase>>... factories) {
+        @CanIgnoreReturnValue
+        public final Builder<TOwner, TBase> owned(String modId, Supplier<Function<TOwner, TBase>> factory, Supplier<Function<TOwner, TBase>>... factories) {
+            owned(modId, factory);
+
+            for(var other : factories) {
+                owned(modId, other);
+            }
+
+            return this;
+        }
+
+        @CanIgnoreReturnValue
+        public Builder<TOwner, TBase> with(String modId, Supplier<Supplier<TBase>> factory) {
+            return owned(modId, () -> owner -> factory.get().get());
+        }
+
+        @SafeVarargs
+        @CanIgnoreReturnValue
+        public final Builder<TOwner, TBase> with(String modId, Supplier<Supplier<TBase>> factory, Supplier<Supplier<TBase>>... factories) {
             with(modId, factory);
 
             for(var other : factories) {
