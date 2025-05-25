@@ -2,23 +2,23 @@ package dev.apexstudios.apexcompatibilities.jei.furniture;
 
 import dev.apexstudios.apexcompatibilities.jei.JeiCompat;
 import dev.apexstudios.apexcompatibilities.jei.JeiSetup;
-import dev.apexstudios.fantasyfurniture.set.BlockTypes;
-import dev.apexstudios.fantasyfurniture.set.FurnitureSet;
+import dev.apexstudios.apexcore.lib.registree.Registree;
+import dev.apexstudios.fantasyfurniture.util.FurnitureUtil;
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 
 public class FurnitureSetJeiPlugin extends JeiCompat {
-    protected final FurnitureSet furnitureSet;
+    protected final Registree registree;
 
-    protected FurnitureSetJeiPlugin(JeiSetup owner, FurnitureSet furnitureSet) {
+    protected FurnitureSetJeiPlugin(JeiSetup owner, Registree registree) {
         super(owner);
 
-        this.furnitureSet = furnitureSet;
+        this.registree = registree;
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        furnitureSet.ifRegistered(BlockTypes.OVEN, block -> {
+        FurnitureUtil.Names.block(registree, FurnitureUtil.Names.OVEN, block -> {
             registration.addCraftingStation(RecipeTypes.SMOKING, block);
             registration.addCraftingStation(RecipeTypes.SMOKING_FUEL, block);
         });

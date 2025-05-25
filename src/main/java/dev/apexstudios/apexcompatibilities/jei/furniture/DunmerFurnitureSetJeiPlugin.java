@@ -5,6 +5,6 @@ import dev.apexstudios.fantasyfurniture.dunmer.DunmerFurnitureSet;
 
 public final class DunmerFurnitureSetJeiPlugin extends FurnitureSetJeiPlugin {
     public DunmerFurnitureSetJeiPlugin(JeiSetup owner) {
-        super(owner, DunmerFurnitureSet.FURNITURE_SET);
+        super(owner, DunmerFurnitureSet.REGISTREE);
     }
 }
