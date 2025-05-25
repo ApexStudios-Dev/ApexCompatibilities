@@ -58,6 +58,16 @@ jobs:
         run: |
           mkdir mods
           wget -O "mods/apexcore-$APEXCORE_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/apexcore/$APEXCORE_VERSION/apexcore-$APEXCORE_VERSION.jar"
+          wget -O "mods/itemresistance-$ITEMRESISTANCE_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/itemresistance/$ITEMRESISTANCE_VERSION/itemresistance-$ITEMRESISTANCE_VERSION.jar"
+          wget -O "mods/infusedfoods-$INFUSEDFOODS_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/infusedfoods/$INFUSEDFOODS_VERSION/infusedfoods-$INFUSEDFOODS_VERSION.jar"
+          wget -O "mods/fantasydice-$FANTASYDICE_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasydice/$FANTASYDICE_VERSION/fantasydice-$FANTASYDICE_VERSION.jar"
+          wget -O "mods/fantasyfurniture-$FANTASYFURNITURE_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture/$FANTASYFURNITURE_VERSION/fantasyfurniture-$FANTASYFURNITURE_VERSION.jar"
+          wget -O "mods/fantasyfurniture-nordic-$FANTASYFURNITURE_NORDIC_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-nordic/$FANTASYFURNITURE_NORDIC_VERSION/fantasyfurniture-nordic-$FANTASYFURNITURE_NORDIC_VERSION.jar"
+          wget -O "mods/fantasyfurniture-venthyr-$FANTASYFURNITURE_VENTHYR_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-venthyr/$FANTASYFURNITURE_VENTHYR_VERSION/fantasyfurniture-venthyr-$FANTASYFURNITURE_VENTHYR_VERSION.jar"
+          wget -O "mods/fantasyfurniture-bone-$FANTASYFURNITURE_BONE_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-bone/$FANTASYFURNITURE_BONE_VERSION/fantasyfurniture-bone-$FANTASYFURNITURE_BONE_VERSION.jar"
+          wget -O "mods/fantasyfurniture-dunmer-$FANTASYFURNITURE_DUNMER_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-dunmer/$FANTASYFURNITURE_DUNMER_VERSION/fantasyfurniture-dunmer-$FANTASYFURNITURE_DUNMER_VERSION.jar"
+          wget -O "mods/fantasyfurniture-necrolord-$FANTASYFURNITURE_NECROLORD_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-necrolord/$FANTASYFURNITURE_NECROLORD_VERSION/fantasyfurniture-necrolord-$FANTASYFURNITURE_NECROLORD_VERSION.jar"
+          wget -O "mods/fantasyfurniture-royal-$FANTASYFURNITURE_ROYAL_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/fantasyfurniture-royal/$FANTASYFURNITURE_ROYAL_VERSION/fantasyfurniture-royal-$FANTASYFURNITURE_ROYAL_VERSION.jar"
           wget -O "mods/apexcompatibilities-${{ needs.generate-vars.outputs.version }}.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/apexcompatibilities/${{ needs.generate-vars.outputs.version }}/apexcompatibilities-${{ needs.generate-vars.outputs.version }}.jar"
           wget -O "mods/jade-$JADE_VERSION+neoforge.jar" "https://api.modrinth.com/maven/maven/modrinth/jade/$JADE_VERSION+neoforge/jade-$JADE_VERSION+neoforge.jar"
           wget -O "mods/architectury-neoforge-$ARCHITECTURY_VERSION.jar" "https://maven.architectury.dev/dev/architectury/architectury-neoforge/$ARCHITECTURY_VERSION/architectury-neoforge-$ARCHITECTURY_VERSION.jar"
@@ -66,6 +76,16 @@ jobs:
           wget -O "mods/jei-1.21.5-neoforge-$JEI_VERSION.jar" "https://maven.blamejared.com/mezz/jei/jei-1.21.5-neoforge/$JEI_VERSION/jei-1.21.5-neoforge-$JEI_VERSION.jar"
         env:
           APEXCORE_VERSION: 21.5.3
+          ITEMRESISTANCE_VERSION: 21.5.1
+          INFUSEDFOODS_VERSION: 21.5.1
+          FANTASYDICE_VERSION: 21.5.1
+          FANTASYFURNITURE_VERSION: 21.5.1
+          FANTASYFURNITURE_NORDIC_VERSION: 21.5.1
+          FANTASYFURNITURE_VENTHYR_VERSION: 21.5.1
+          FANTASYFURNITURE_BONE_VERSION: 21.5.1
+          FANTASYFURNITURE_DUNMER_VERSION: 21.5.1
+          FANTASYFURNITURE_NECROLORD_VERSION: 21.5.1
+          FANTASYFURNITURE_ROYAL_VERSION: 21.5.1
           ARCHITECTURY_VERSION: 16.1.4
           REI_VERSION: 19.0.806
           CLOTHCONFIG_VERSION: 18.0.145
