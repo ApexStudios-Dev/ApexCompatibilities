@@ -30,11 +30,15 @@ dependencyResolutionManagement {
         library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-necrolord").version("21.5.1")
         library("fantasyfurniture_royal", "dev.apexstudios", "fantasyfurniture-royal").version("21.5.1")
 
-        version("rei", "19.0.805")
+        version("rei", "19.0.806")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
         library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api-neoforge").versionRef("rei")
-        library("rei-default-plugin", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
-        bundle("rei-api", listOf("rei-api", "rei-default-plugin"))
+        library("rei-default-plugins", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
+        bundle("rei", listOf("rei-api", "rei-default-plugins"))
+
+        version("jei", "21.0.0.2")
+        library("jei-api", "mezz.jei", "jei-1.21.5-neoforge-api").versionRef("jei")
+        library("jei", "mezz.jei", "jei-1.21.5-neoforge").versionRef("jei")
 
         library("jade", "maven.modrinth", "jade").version("18.2.0+neoforge")
     }

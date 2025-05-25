@@ -17,6 +17,8 @@ single.withDataGen()
 repositories {
     maven("https://maven.shedaniel.me")
     maven("https://maven.architectury.dev")
+    maven("https://maven.blamejared.com")
+    maven("https://modmaven.dev")
 
     maven("https://api.modrinth.com/maven") {
         content {
@@ -39,8 +41,12 @@ dependencies {
     includeMod(libs.fantasyfurniture.necrolord, true, false)
     includeMod(libs.fantasyfurniture.royal, true, false)
 
-    implementation(libs.rei)
-    compileOnly(libs.rei.api)
+    // runtimeOnly(libs.rei)
+    compileOnly(libs.bundles.rei)
+
+    runtimeOnly(libs.jei)
+    "dataRuntimeOnly"(libs.jei)
+    compileOnly(libs.jei.api)
 
     implementation(libs.jade)
 }

@@ -27,6 +27,13 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
     side="BOTH"
 
 [[dependencies.apexcompatibilities]]
+    modId="jei"
+    type="optional"
+    versionRange="[21.0,22.0)"
+    [dependencies.apexcompatibilities.mc-publish]
+        modrinth="u6dRKJwZ"
+        curseforge="238222"
+[[dependencies.apexcompatibilities]]
     modId="roughlyenoughitems"
     type="optional"
     versionRange="[19.0,20.0)"
