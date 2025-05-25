@@ -2,6 +2,7 @@ package dev.apexstudios.apexcompatibilities.jei;
 
 import dev.apexstudios.apexcompatibilities.ApexCompatibilities;
 import dev.apexstudios.apexcompatibilities.CompatManager;
+import dev.apexstudios.apexcompatibilities.jei.dice.FantasyDiceJeiPlugin;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IPlatformFluidHelper;
@@ -24,7 +25,9 @@ import net.minecraft.resources.ResourceLocation;
 
 @JeiPlugin
 public final class JeiSetup implements IModPlugin {
-    private final CompatManager<JeiSetup, IModPlugin> manager = CompatManager.create(this, builder -> {});
+    private final CompatManager<JeiSetup, IModPlugin> manager = CompatManager.create(this, builder -> builder
+            .owned(ApexCompatibilities.FANTASY_DICE, () -> FantasyDiceJeiPlugin::new)
+    );
 
     @Override
     public ResourceLocation getPluginUid() {
