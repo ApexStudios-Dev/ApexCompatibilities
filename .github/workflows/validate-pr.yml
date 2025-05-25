@@ -60,11 +60,13 @@ jobs:
           wget -O "mods/apexcore-$APEXCORE_VERSION.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/apexcore/$APEXCORE_VERSION/apexcore-$APEXCORE_VERSION.jar"
           wget -O "mods/apexcompatibilities-${{ needs.generate-vars.outputs.version }}.jar" "https://maven.apexstudios.dev/private/dev/apexstudios/apexcompatibilities/${{ needs.generate-vars.outputs.version }}/apexcompatibilities-${{ needs.generate-vars.outputs.version }}.jar"
           wget -O "mods/jade-$JADE_VERSION+neoforge.jar" "https://api.modrinth.com/maven/maven/modrinth/jade/$JADE_VERSION+neoforge/jade-$JADE_VERSION+neoforge.jar"
+          wget -O "mods/architectury-neoforge-$ARCHITECTURY_VERSION.jar" "https://maven.architectury.dev/dev/architectury/architectury-neoforge/$ARCHITECTURY_VERSION/architectury-neoforge-$ARCHITECTURY_VERSION.jar"
           wget -O "mods/cloth-config-neoforge-$CLOTHCONFIG_VERSION-neoforge.jar" "https://maven.shedaniel.me/me/shedaniel/cloth/cloth-config-neoforge/$CLOTHCONFIG_VERSION/cloth-config-neoforge-$CLOTHCONFIG_VERSION-neoforge.jar"
           wget -O "mods/RoughlyEnoughItems-neoforge-$REI_VERSION.jar" "https://maven.shedaniel.me/me/shedaniel/RoughlyEnoughItems-neoforge/$REI_VERSION/RoughlyEnoughItems-neoforge-$REI_VERSION.jar"
           wget -O "mods/jei-1.21.5-neoforge-$JEI_VERSION.jar" "https://maven.blamejared.com/mezz/jei/jei-1.21.5-neoforge/$JEI_VERSION/jei-1.21.5-neoforge-$JEI_VERSION.jar"
         env:
           APEXCORE_VERSION: 21.5.3
+          ARCHITECTURY_VERSION: 16.1.4
           REI_VERSION: 19.0.806
           CLOTHCONFIG_VERSION: 18.0.145
           JEI_VERSION: 21.0.0.2
