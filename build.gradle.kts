@@ -45,6 +45,7 @@ dependencies {
     compileOnly(libs.bundles.rei)
 
     runtimeOnly(libs.jei)
+    "dataRuntimeOnly"(libs.jei)
     compileOnly(libs.jei.api)
 
     implementation(libs.jade)

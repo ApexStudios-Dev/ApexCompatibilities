@@ -3,6 +3,14 @@ package dev.apexstudios.apexcompatibilities.jei;
 import dev.apexstudios.apexcompatibilities.ApexCompatibilities;
 import dev.apexstudios.apexcompatibilities.CompatManager;
 import dev.apexstudios.apexcompatibilities.jei.dice.FantasyDiceJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.BoneSkeletonFurnitureSetJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.BoneWitherFurnitureSetJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.DunmerFurnitureSetJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.FantasyFurnitureJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.NecrolordFurnitureSetJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.NordicFurnitureSetJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.RoyalFurnitureSetJeiPlugin;
+import dev.apexstudios.apexcompatibilities.jei.furniture.VenthyrFurnitureSetJeiPlugin;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IPlatformFluidHelper;
@@ -27,6 +35,13 @@ import net.minecraft.resources.ResourceLocation;
 public final class JeiSetup implements IModPlugin {
     private final CompatManager<JeiSetup, IModPlugin> manager = CompatManager.create(this, builder -> builder
             .owned(ApexCompatibilities.FANTASY_DICE, () -> FantasyDiceJeiPlugin::new)
+            .owned(ApexCompatibilities.FANTASY_FURNITURE, () -> FantasyFurnitureJeiPlugin::new)
+            .owned(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, () -> NordicFurnitureSetJeiPlugin::new)
+            .owned(ApexCompatibilities.FANTASY_FURNITURE_VENTHYR, () -> VenthyrFurnitureSetJeiPlugin::new)
+            .owned(ApexCompatibilities.FANTASY_FURNITURE_BONE, () -> BoneSkeletonFurnitureSetJeiPlugin::new, () -> BoneWitherFurnitureSetJeiPlugin::new)
+            .owned(ApexCompatibilities.FANTASY_FURNITURE_DUNMER, () -> DunmerFurnitureSetJeiPlugin::new)
+            .owned(ApexCompatibilities.FANTASY_FURNITURE_NECROLORD, () -> NecrolordFurnitureSetJeiPlugin::new)
+            .owned(ApexCompatibilities.FANTASY_FURNITURE_ROYAL, () -> RoyalFurnitureSetJeiPlugin::new)
     );
 
     @Override
