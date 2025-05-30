@@ -55,6 +55,6 @@ public final class FurnitureStationRecipeCategory extends AbstractRecipeCategory
     public void draw(RecipeHolder<FurnitureStationRecipe> holder, IRecipeSlotsView recipeSlotsView, GuiGraphics graphics, double mouseX, double mouseY) {
         super.draw(holder, recipeSlotsView, graphics, mouseX, mouseY);
 
-        graphics.blitSprite(RenderType::guiTextured, FurnitureStationScreen.SPRITE_ARROW, AbstractContainerMenu.SLOT_SIZE * 3 + 8, 0, 60, 16);
+        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, FurnitureStationScreen.SPRITE_ARROW, AbstractContainerMenu.SLOT_SIZE * 3 + 8, 0, 60, 16);
     }
 }
