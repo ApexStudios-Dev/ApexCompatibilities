@@ -12,6 +12,7 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 
+// @EventBusSubscriber(modid = "apexcompatibilities") // TODO: Sync recipes directly in FF
 public final class FantasyFurnitureJeiPlugin extends JeiCompat {
     public static final Supplier<IRecipeHolderType<FurnitureStationRecipe>> RECIPE_TYPE = IRecipeHolderType.createDeferred(FurnitureStationSetup.RECIPE_TYPE::value);
 
