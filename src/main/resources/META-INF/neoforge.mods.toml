@@ -79,7 +79,7 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
 [[dependencies.apexcompatibilities]]
     modId="fantasyfurniture"
     type="optional"
-    versionRange="[21.5,21.6)"
+    versionRange="[21.5.13,21.6)"
     [dependencies.apexcompatibilities.mc-publish]
         modrinth="A0nfCqYw"
         curseforge="579564"

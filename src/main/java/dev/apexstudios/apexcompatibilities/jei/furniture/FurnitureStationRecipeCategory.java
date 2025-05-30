@@ -1,7 +1,7 @@
 package dev.apexstudios.apexcompatibilities.jei.furniture;
 
-import dev.apexstudios.fantasyfurniture.FantasyFurniture;
 import dev.apexstudios.fantasyfurniture.station.FurnitureStationRecipe;
+import dev.apexstudios.fantasyfurniture.station.FurnitureStationScreen;
 import dev.apexstudios.fantasyfurniture.station.FurnitureStationSetup;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
@@ -55,7 +55,6 @@ public final class FurnitureStationRecipeCategory extends AbstractRecipeCategory
     public void draw(RecipeHolder<FurnitureStationRecipe> holder, IRecipeSlotsView recipeSlotsView, GuiGraphics graphics, double mouseX, double mouseY) {
         super.draw(holder, recipeSlotsView, graphics, mouseX, mouseY);
 
-        // TODO: Make 'FurnitureStationScreen.SPRITE_ARROW' public
-        graphics.blitSprite(RenderType::guiTextured, FantasyFurniture.identifier("container/furniture_station/arrow"), AbstractContainerMenu.SLOT_SIZE * 3 + 8, 0, 60, 16);
+        graphics.blitSprite(RenderType::guiTextured, FurnitureStationScreen.SPRITE_ARROW, AbstractContainerMenu.SLOT_SIZE * 3 + 8, 0, 60, 16);
     }
 }
