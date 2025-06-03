@@ -8,7 +8,7 @@ plugins {
 
 group = "dev.apexstudios"
 
-apex.neoVersion("21.5.0-alpha.1.21.6-pre1.20250530.090835", "2025.06.01")
+apex.neoVersion("21.5.0-alpha.1.21.6-pre1.20250603.133746", "2025.06.01")
 apex.extendCompilerErrors()
 
 val single = ApexSingleExtension.getOrCreate(project)
@@ -26,6 +26,8 @@ repositories {
             includeGroup("maven.modrinth")
         }
     }
+
+    apex.neoPrMaven(this, 2297)
 }
 
 dependencies {
