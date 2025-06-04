@@ -19,6 +19,7 @@ repositories {
     maven("https://maven.architectury.dev")
     maven("https://maven.blamejared.com")
     maven("https://modmaven.dev")
+    maven("https://maven.apexstudios.dev/private")
 
     maven("https://api.modrinth.com/maven") {
         content {
