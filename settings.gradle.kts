@@ -17,12 +17,12 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        library("apexcore", "dev.apexstudios", "apexcore").version("21.5.3")
+        library("apexcore", "dev.apexstudios", "apexcore").version("21.5.15")
         library("itemresistance", "dev.apexstudios", "itemresistance").version("21.5.1")
         library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.5.1")
         library("fantasydice", "dev.apexstudios", "fantasydice").version("21.5.1")
 
-        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").version("21.5.14-beta-pr-57")
+        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").version("21.5.14")
         library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").version("21.5.1")
         library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").version("21.5.1")
         library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").version("21.5.1")
