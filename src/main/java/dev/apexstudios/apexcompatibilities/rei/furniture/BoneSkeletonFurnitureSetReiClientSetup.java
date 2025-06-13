@@ -1,9 +1,9 @@
 package dev.apexstudios.apexcompatibilities.rei.furniture;
 
-import apexstudios.fantasyfurniture.bone.BoneFurnitureSet;
+import dev.apexstudios.fantasyfurniture.bone.SkeletonFurnitureSet;
 
 public final class BoneSkeletonFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
     public BoneSkeletonFurnitureSetReiClientSetup() {
-        super(BoneFurnitureSet.SKELETON);
+        super(SkeletonFurnitureSet.get().registree, "Skeleton");
     }
 }

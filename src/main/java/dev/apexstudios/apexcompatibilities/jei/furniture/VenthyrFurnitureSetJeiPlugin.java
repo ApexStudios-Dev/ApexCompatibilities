@@ -5,6 +5,6 @@ import dev.apexstudios.fantasyfurniture.venthyr.VenthyrFurnitureSet;
 
 public final class VenthyrFurnitureSetJeiPlugin extends FurnitureSetJeiPlugin {
     public VenthyrFurnitureSetJeiPlugin(JeiSetup owner) {
-        super(owner, VenthyrFurnitureSet.FURNITURE_SET);
+        super(owner, VenthyrFurnitureSet.REGISTREE);
     }
 }

@@ -1,6 +1,7 @@
 package dev.apexstudios.apexcompatibilities.rei.infused;
 
 import dev.apexstudios.infusedfoods.InfusedFoods;
+import dev.apexstudios.infusedfoods.util.InfusionUtil;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.entry.CollapsibleEntryRegistry;
 import me.shedaniel.rei.api.common.entry.type.VanillaEntryTypes;
@@ -16,7 +17,7 @@ public final class InfusedFoodsReiClientSetup implements REIClientPlugin {
                 VanillaEntryTypes.ITEM,
                 entry -> {
                     var stack = entry.getValue();
-                    return InfusedFoods.isValidFood(stack) && stack.has(DataComponents.POTION_CONTENTS);
+                    return InfusionUtil.isValidFood(stack) && stack.has(DataComponents.POTION_CONTENTS);
                 }
         );
     }

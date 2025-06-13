@@ -5,6 +5,6 @@ import dev.apexstudios.fantasyfurniture.nordic.NordicFurnitureSet;
 
 public final class NordicFurnitureSetJeiPlugin extends FurnitureSetJeiPlugin {
     public NordicFurnitureSetJeiPlugin(JeiSetup owner) {
-        super(owner, NordicFurnitureSet.FURNITURE_SET);
+        super(owner, NordicFurnitureSet.REGISTREE);
     }
 }

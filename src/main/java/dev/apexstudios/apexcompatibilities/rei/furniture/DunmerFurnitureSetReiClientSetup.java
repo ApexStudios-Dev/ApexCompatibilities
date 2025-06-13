@@ -4,6 +4,6 @@ import dev.apexstudios.fantasyfurniture.dunmer.DunmerFurnitureSet;
 
 public final class DunmerFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
     public DunmerFurnitureSetReiClientSetup() {
-        super(DunmerFurnitureSet.FURNITURE_SET);
+        super(DunmerFurnitureSet.REGISTREE, "Dunmer");
     }
 }
