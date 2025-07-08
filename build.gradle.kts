@@ -1,3 +1,4 @@
+import dev.apexstudios.gradle.ApexExtension
 import dev.apexstudios.gradle.single.ApexSingleExtension
 
 plugins {
