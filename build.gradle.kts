@@ -33,11 +33,11 @@ dependencies {
     compileOnly(libs.jade)
 
     // TODO: Uncomment once updated to 21.6
-    /*if(!ApexExtension.IS_CI) {
+    if(!ApexExtension.IS_CI) {
         // runtimeOnly(libs.rei)
-        runtimeOnly(libs.jei)
+        // runtimeOnly(libs.jei)
         runtimeOnly(libs.jade)
-    }*/
+    }
 }
 
 fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false) {

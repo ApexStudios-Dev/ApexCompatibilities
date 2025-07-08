@@ -33,7 +33,7 @@ dependencyResolutionManagement {
         library("jei-api", "mezz.jei", "jei-1.21.5-neoforge-api").versionRef("jei")
         library("jei", "mezz.jei", "jei-1.21.5-neoforge").versionRef("jei")
 
-        library("jade", "maven.modrinth", "jade").version("18.2.0+neoforge")
+        library("jade", "maven.modrinth", "jade").version("19.0.3+neoforge")
     }
 }
 
