@@ -9,7 +9,7 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.category.AbstractRecipeCategory;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.crafting.RecipeHolder;
 
@@ -55,6 +55,6 @@ public final class FurnitureStationRecipeCategory extends AbstractRecipeCategory
     public void draw(RecipeHolder<FurnitureStationRecipe> holder, IRecipeSlotsView recipeSlotsView, GuiGraphics graphics, double mouseX, double mouseY) {
         super.draw(holder, recipeSlotsView, graphics, mouseX, mouseY);
 
-        graphics.blitSprite(RenderType::guiTextured, FurnitureStationScreen.SPRITE_ARROW, AbstractContainerMenu.SLOT_SIZE * 3 + 8, 0, 60, 16);
+        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, FurnitureStationScreen.SPRITE_ARROW, AbstractContainerMenu.SLOT_SIZE * 3 + 8, 0, 60, 16);
     }
 }
