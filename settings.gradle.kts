@@ -1,6 +1,4 @@
 pluginManagement {
-    includeBuild("../../ApexGradle")
-
     repositories {
         gradlePluginPortal()
         maven("https://maven.apexstudios.dev/releases")
