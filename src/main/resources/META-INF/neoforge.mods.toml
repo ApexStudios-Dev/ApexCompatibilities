@@ -107,7 +107,7 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
 [[dependencies.apexcompatibilities]]
     modId="fantasyfurniture_dunmer"
     type="optional"
-    versionRange=[21.6,21.7)
+    versionRange="[21.6,21.7)"
     [dependencies.apexcompatibilities.mc-publish]
         modrinth="Bs7e2IyQ"
         curseforge="1209702"
