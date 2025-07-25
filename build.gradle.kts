@@ -33,7 +33,6 @@ dependencies {
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
-    // TODO: Uncomment once updated to 21.6
     if(!ApexExtension.IS_CI) {
         // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
