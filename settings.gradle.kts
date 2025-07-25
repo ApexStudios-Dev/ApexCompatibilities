@@ -28,8 +28,8 @@ dependencyResolutionManagement {
         bundle("rei", listOf("rei-api", "rei-default-plugins"))
 
         version("jei", "23.1.0.4")
-        library("jei-api", "mezz.jei", "jei-1.21.5-neoforge-api").versionRef("jei")
-        library("jei", "mezz.jei", "jei-1.21.5-neoforge").versionRef("jei")
+        library("jei-api", "mezz.jei", "jei-1.21.7-neoforge-api").versionRef("jei")
+        library("jei", "mezz.jei", "jei-1.21.7-neoforge").versionRef("jei")
 
         library("jade", "maven.modrinth", "jade").version("19.0.3+neoforge")
     }
