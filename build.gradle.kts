@@ -8,7 +8,7 @@ plugins {
 
 group = "dev.apexstudios"
 
-apex.neoVersion("21.8.31", "2025.07.20")
+apex.neoVersion("21.9.0-alpha.25w34b.20250821.203312", "1.21.8", "2025.07.20")
 apex.extendCompilerErrors()
 
 val single = ApexSingleExtension.getOrCreate(project)
@@ -35,7 +35,7 @@ dependencies {
     if(!ApexExtension.IS_CI) {
         // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
-        runtimeOnly(libs.jade)
+        // runtimeOnly(libs.jade)
     }
 }
 
