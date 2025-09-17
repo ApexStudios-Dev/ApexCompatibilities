@@ -46,13 +46,13 @@ dependencies {
 fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false) {
     dependencies {
         if(compile)
-            compileOnly(mod)
+            compileOnly(mod) { isTransitive = false }
         else
-            implementation(mod)
+            implementation(mod) { isTransitive = false }
 
-        "dataImplementation"(mod)
+        "dataImplementation"(mod) { isTransitive = false }
 
         if(at)
-            accessTransformers(mod)
+            accessTransformers(mod) { isTransitive = false }
     }
 }
