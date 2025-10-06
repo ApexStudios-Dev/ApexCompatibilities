@@ -8,30 +8,30 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        library("apexcore", "dev.apexstudios", "apexcore").version("21.9.11-beta-pr-51")
+        library("apexcore", "dev.apexstudios", "apexcore").version("21.9.17-beta-pr-51")
         library("itemresistance", "dev.apexstudios", "itemresistance").version("21.9.6-beta-pr-28")
         library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.9.5-beta-pr-31")
         library("fantasydice", "dev.apexstudios", "fantasydice").version("21.9.6-beta-pr-29")
 
-        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").version("21.9.11-beta-pr-81")
-        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").version("21.9.11-beta-pr-81")
-        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").version("21.9.11-beta-pr-81")
-        library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").version("21.9.11-beta-pr-81")
-        library("fantasyfurniture_dunmer", "dev.apexstudios", "fantasyfurniture-dunmer").version("21.9.11-beta-pr-81")
-        library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-necrolord").version("21.9.11-beta-pr-81")
-        library("fantasyfurniture_royal", "dev.apexstudios", "fantasyfurniture-royal").version("21.9.11-beta-pr-81")
+        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").version("21.9.16-beta-pr-81")
+        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").version("21.9.16-beta-pr-81")
+        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").version("21.9.16-beta-pr-81")
+        library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").version("21.9.16-beta-pr-81")
+        library("fantasyfurniture_dunmer", "dev.apexstudios", "fantasyfurniture-dunmer").version("21.9.16-beta-pr-81")
+        library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-necrolord").version("21.9.16-beta-pr-81")
+        library("fantasyfurniture_royal", "dev.apexstudios", "fantasyfurniture-royal").version("21.9.16-beta-pr-81")
 
-        version("rei", "20.0.810")
+        version("rei", "20.0.811")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
         library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api-neoforge").versionRef("rei")
         library("rei-default-plugins", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
         bundle("rei", listOf("rei-api", "rei-default-plugins"))
 
-        version("jei", "23.1.0.4")
-        library("jei-api", "mezz.jei", "jei-1.21.7-neoforge-api").versionRef("jei")
-        library("jei", "mezz.jei", "jei-1.21.7-neoforge").versionRef("jei")
+        version("jei", "25.0.1.4")
+        library("jei-api", "mezz.jei", "jei-1.21.9-neoforge-api").versionRef("jei")
+        library("jei", "mezz.jei", "jei-1.21.9-neoforge").versionRef("jei")
 
-        library("jade", "maven.modrinth", "jade").version("19.0.3+neoforge")
+        library("jade", "maven.modrinth", "jade").version("20.0.5+neoforge")
     }
 }
 

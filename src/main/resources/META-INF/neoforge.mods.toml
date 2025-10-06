@@ -29,7 +29,7 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
 [[dependencies.apexcompatibilities]]
     modId="jei"
     type="optional"
-    versionRange="[23.0,24.0)"
+    versionRange="[25.0,26.0)"
     [dependencies.apexcompatibilities.mc-publish]
         modrinth="u6dRKJwZ"
         curseforge="238222"
@@ -43,7 +43,7 @@ issueTrackerURL="https://github.com/ApexStudios-Dev/Issues/issues"
 [[dependencies.apexcompatibilities]]
     modId="jade"
     type="optional"
-    versionRange="[19.0,20.0)"
+    versionRange="[20.0,21.0)"
     [dependencies.apexcompatibilities.mc-publish]
         modrinth="nvQzSEkH"
         curseforge="324717"
