@@ -4,6 +4,6 @@ import dev.apexstudios.fantasyfurniture.bone.SkeletonFurnitureSet;
 
 public final class BoneSkeletonFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
     public BoneSkeletonFurnitureSetReiClientSetup() {
-        super(SkeletonFurnitureSet.get().registree, "Skeleton");
+        super(SkeletonFurnitureSet.FURNITURE_SET.registree, "Skeleton");
     }
 }

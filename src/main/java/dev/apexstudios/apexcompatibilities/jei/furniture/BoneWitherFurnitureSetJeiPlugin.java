@@ -5,6 +5,6 @@ import dev.apexstudios.fantasyfurniture.bone.WitherFurnitureSet;
 
 public final class BoneWitherFurnitureSetJeiPlugin extends FurnitureSetJeiPlugin {
     public BoneWitherFurnitureSetJeiPlugin(JeiSetup owner) {
-        super(owner, WitherFurnitureSet.get().registree);
+        super(owner, WitherFurnitureSet.FURNITURE_SET.registree);
     }
 }
