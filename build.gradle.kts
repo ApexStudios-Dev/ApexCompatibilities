@@ -8,7 +8,7 @@ plugins {
 
 group = "dev.apexstudios"
 
-apex.neoVersion("21.9.25-beta-pr-2699-pr-debug-entries", "2025.10.05")
+apex.neoVersion("21.10.12-beta-pr-2699-pr-debug-entries", "1.21.9", "2025.10.05")
 apex.extendCompilerErrors()
 
 val single = ApexSingleExtension.getOrCreate(project)
@@ -40,8 +40,7 @@ dependencies {
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
-    if(!ApexExtension.IS_CI) {
-        // runtimeOnly(libs.rei)
+    if(!ApexExtension.IS_CI) { // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
         // runtimeOnly(libs.jade)
     }
@@ -49,14 +48,11 @@ dependencies {
 
 fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false) {
     dependencies {
-        if(compile)
-            compileOnly(mod) { isTransitive = false }
-        else
-            implementation(mod) { isTransitive = false }
+        if(compile) compileOnly(mod) { isTransitive = false }
+        else implementation(mod) { isTransitive = false }
 
         "dataImplementation"(mod) { isTransitive = false }
 
-        if(at)
-            accessTransformers(mod) { isTransitive = false }
+        if(at) accessTransformers(mod) { isTransitive = false }
     }
 }
