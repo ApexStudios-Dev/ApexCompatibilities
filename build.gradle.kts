@@ -23,6 +23,7 @@ repositories {
 }
 
 dependencies {
+    includeMod(libs.registree, false, false)
     includeMod(libs.apexcore, false, true)
     includeMod(libs.itemresistance, true, false)
     includeMod(libs.infusedfoods, true, false)
