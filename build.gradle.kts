@@ -20,6 +20,14 @@ repositories {
     maven("https://maven.blamejared.com")
     maven("https://modmaven.dev")
     maven("https://api.modrinth.com/maven")
+
+    maven("https://maven.apexstudios.dev/prs/Registree/pr10")
+    maven("https://maven.apexstudios.dev/prs/PlacementVisualizer/pr13")
+    maven("https://maven.apexstudios.dev/prs/ApexCore/pr64")
+    maven("https://maven.apexstudios.dev/prs/ItemResistance/pr10")
+    maven("https://maven.apexstudios.dev/prs/InfusedFoods/pr10")
+    maven("https://maven.apexstudios.dev/prs/FantasyDice/pr10")
+    maven("https://maven.apexstudios.dev/prs/FantasyFurniture/pr10")
 }
 
 dependencies {
