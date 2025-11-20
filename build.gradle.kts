@@ -8,7 +8,7 @@ plugins {
 
 group = "dev.apexstudios"
 
-apex.neoVersion("21.10.34-beta", "2025.10.12")
+apex.neoVersion("21.11.0-alpha.25w45a.20251119.234730", "1.21.10", "2025.10.12")
 apex.extendCompilerErrors()
 
 val single = ApexSingleExtension.getOrCreate(project)
@@ -24,44 +24,45 @@ repositories {
     maven("https://maven.apexstudios.dev/prs/Registree/pr10")
     maven("https://maven.apexstudios.dev/prs/PlacementVisualizer/pr13")
     maven("https://maven.apexstudios.dev/prs/ApexCore/pr64")
-    maven("https://maven.apexstudios.dev/prs/ItemResistance/pr10")
-    maven("https://maven.apexstudios.dev/prs/InfusedFoods/pr10")
-    maven("https://maven.apexstudios.dev/prs/FantasyDice/pr10")
-    maven("https://maven.apexstudios.dev/prs/FantasyFurniture/pr10")
+    maven("https://maven.apexstudios.dev/prs/ItemResistance/pr33")
+    maven("https://maven.apexstudios.dev/prs/InfusedFoods/pr36")
+    maven("https://maven.apexstudios.dev/prs/FantasyDice/pr34")
+    maven("https://maven.apexstudios.dev/prs/FantasyFurniture/pr88")
+
+    apex.neoPrMaven(this, 2815)
 }
 
 dependencies {
-    includeMod(libs.registree, false, false)
-    includeMod(libs.apexcore, false, true)
-    includeMod(libs.itemresistance, true, false)
-    includeMod(libs.infusedfoods, true, false)
-    includeMod(libs.fantasydice, true, false)
+    includeMod(libs.registree, false)
+    includeMod(libs.apexcore, false)
+    includeMod(libs.itemresistance, true)
+    includeMod(libs.infusedfoods, true)
+    includeMod(libs.fantasydice, true)
 
-    includeMod(libs.fantasyfurniture.asProvider(), true, false)
-    includeMod(libs.fantasyfurniture.nordic, true, false)
-    includeMod(libs.fantasyfurniture.venthyr, true, false)
-    includeMod(libs.fantasyfurniture.bone, true, false)
-    includeMod(libs.fantasyfurniture.dunmer, true, false)
-    includeMod(libs.fantasyfurniture.necrolord, true, false)
-    includeMod(libs.fantasyfurniture.royal, true, false)
+    includeMod(libs.fantasyfurniture.asProvider(), true)
+    includeMod(libs.fantasyfurniture.nordic, true)
+    includeMod(libs.fantasyfurniture.venthyr, true)
+    includeMod(libs.fantasyfurniture.bone, true)
+    includeMod(libs.fantasyfurniture.dunmer, true)
+    includeMod(libs.fantasyfurniture.necrolord, true)
+    includeMod(libs.fantasyfurniture.royal, true)
 
     compileOnly(libs.bundles.rei)
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
-    if(!ApexExtension.IS_CI) { // runtimeOnly(libs.rei)
+    if(!ApexExtension.IS_CI) {
+    // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
         // runtimeOnly(libs.jade)
     }
 }
 
-fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false) {
+fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false) {
     dependencies {
         if(compile) compileOnly(mod) { isTransitive = false }
         else implementation(mod) { isTransitive = false }
 
         "dataImplementation"(mod) { isTransitive = false }
-
-        if(at) accessTransformers(mod) { isTransitive = false }
     }
 }

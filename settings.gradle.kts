@@ -10,17 +10,17 @@ dependencyResolutionManagement {
     versionCatalogs.create("libs") {
         library("registree", "dev.apexstudios", "registree").version("21.11.1-beta-pr-10") // match version ApexCore is compiled against
         library("apexcore", "dev.apexstudios", "apexcore").version("21.11.2-beta-pr-64")
-        library("itemresistance", "dev.apexstudios", "itemresistance").version("21.10.0")
-        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.10.0")
-        library("fantasydice", "dev.apexstudios", "fantasydice").version("21.10.0")
+        library("itemresistance", "dev.apexstudios", "itemresistance").version("21.11.3-beta-pr-33")
+        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("21.11.3-beta-pr-36")
+        library("fantasydice", "dev.apexstudios", "fantasydice").version("21.11.3-beta-pr-34")
 
-        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").version("21.10.0")
-        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").version("21.10.0")
-        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").version("21.10.0")
-        library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").version("21.10.0")
-        library("fantasyfurniture_dunmer", "dev.apexstudios", "fantasyfurniture-dunmer").version("21.10.0")
-        library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-necrolord").version("21.10.0")
-        library("fantasyfurniture_royal", "dev.apexstudios", "fantasyfurniture-royal").version("21.10.0")
+        library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").version("21.11.3-beta-pr-88")
+        library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture-nordic").version("21.11.3-beta-pr-88")
+        library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture-venthyr").version("21.11.3-beta-pr-88")
+        library("fantasyfurniture_bone", "dev.apexstudios", "fantasyfurniture-bone").version("21.11.3-beta-pr-88")
+        library("fantasyfurniture_dunmer", "dev.apexstudios", "fantasyfurniture-dunmer").version("21.11.3-beta-pr-88")
+        library("fantasyfurniture_necrolord", "dev.apexstudios", "fantasyfurniture-necrolord").version("21.11.3-beta-pr-88")
+        library("fantasyfurniture_royal", "dev.apexstudios", "fantasyfurniture-royal").version("21.11.3-beta-pr-88")
 
         version("rei", "20.0.811")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
