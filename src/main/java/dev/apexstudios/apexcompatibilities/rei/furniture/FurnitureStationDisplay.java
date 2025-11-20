@@ -12,7 +12,7 @@ import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.crafting.RecipeHolder;
 
 final class FurnitureStationDisplay extends BasicDisplay {
@@ -20,17 +20,17 @@ final class FurnitureStationDisplay extends BasicDisplay {
             RecordCodecBuilder.mapCodec(instance -> instance.group(
                     EntryIngredient.codec().listOf().fieldOf("inputs").forGetter(FurnitureStationDisplay::getInputEntries),
                     EntryIngredient.codec().listOf().fieldOf("outputs").forGetter(FurnitureStationDisplay::getOutputEntries),
-                    ResourceLocation.CODEC.optionalFieldOf("location").forGetter(FurnitureStationDisplay::getDisplayLocation)
+                    Identifier.CODEC.optionalFieldOf("location").forGetter(FurnitureStationDisplay::getDisplayLocation)
             ).apply(instance, FurnitureStationDisplay::new)),
             StreamCodec.composite(
                     EntryIngredient.streamCodec().apply(ByteBufCodecs.list()), FurnitureStationDisplay::getInputEntries,
                     EntryIngredient.streamCodec().apply(ByteBufCodecs.list()), FurnitureStationDisplay::getOutputEntries,
-                    ByteBufCodecs.optional(ResourceLocation.STREAM_CODEC), FurnitureStationDisplay::getDisplayLocation,
+                    ByteBufCodecs.optional(Identifier.STREAM_CODEC), FurnitureStationDisplay::getDisplayLocation,
                     FurnitureStationDisplay::new
             )
     );
 
-    public FurnitureStationDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs, Optional<ResourceLocation> location) {
+    public FurnitureStationDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs, Optional<Identifier> location) {
         super(inputs, outputs, location);
     }
 
@@ -54,7 +54,7 @@ final class FurnitureStationDisplay extends BasicDisplay {
                         EntryIngredients.ofIngredient(recipe.bindingAgent())
                 ),
                 List.of(EntryIngredients.of(recipe.result())),
-                Optional.of(holder.id().location())
+                Optional.of(holder.id().identifier())
         );
     }
 }

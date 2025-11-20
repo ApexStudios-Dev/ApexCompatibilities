@@ -1,7 +1,7 @@
 package dev.apexstudios.apexcompatibilities.jei;
 
 import mezz.jei.api.IModPlugin;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class JeiCompat implements IModPlugin {
     private final JeiSetup owner;
@@ -11,7 +11,7 @@ public class JeiCompat implements IModPlugin {
     }
 
     @Override
-    public final ResourceLocation getPluginUid() {
+    public final Identifier getPluginUid() {
         return owner.getPluginUid();
     }
 }
