@@ -14,6 +14,10 @@ apex.extendCompilerErrors()
 val single = ApexSingleExtension.getOrCreate(project)
 single.withDataGen()
 
+neoForge {
+    accessTransformers.from(file("src/${ApexExtension.DATA_NAME}/datagen-at.cfg"))
+}
+
 repositories {
     maven("https://maven.shedaniel.me")
     maven("https://maven.architectury.dev")
