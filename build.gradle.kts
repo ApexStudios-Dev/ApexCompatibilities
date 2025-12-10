@@ -2,24 +2,26 @@ import dev.apexstudios.gradle.ApexExtension
 import dev.apexstudios.gradle.single.ApexSingleExtension
 
 plugins {
-    id("apex-conventions.neoforge") version "0.1.75"
-    id("apex-conventions.maven-publishing") version "0.1.75"
+    id("apex-conventions.neoforge") version "0.1.82"
+    id("apex-conventions.maven-publishing") version "0.1.82"
 }
 
 group = "dev.apexstudios"
 
-apex.neoVersion("21.10.34-beta", "2025.10.12")
+apex.neoVersion("21.11.0-beta", "1.21.10", "2025.10.12")
 apex.extendCompilerErrors()
 
 val single = ApexSingleExtension.getOrCreate(project)
 single.withDataGen()
 
 repositories {
-    maven("https://maven.shedaniel.me")
-    maven("https://maven.architectury.dev")
-    maven("https://maven.blamejared.com")
-    maven("https://modmaven.dev")
-    maven("https://api.modrinth.com/maven")
+    maven("https://maven.apexstudios.dev/prs/Registree/pr11")
+    maven("https://maven.apexstudios.dev/prs/Placement-Visualizer/pr14")
+    maven("https://maven.apexstudios.dev/prs/ApexCore-Private/pr67")
+    maven("https://maven.apexstudios.dev/prs/ItemResistance-Private/pr34")
+    maven("https://maven.apexstudios.dev/prs/InfusedFoods-Private/pr37")
+    maven("https://maven.apexstudios.dev/prs/FantasyDice-Private/pr35")
+    maven("https://maven.apexstudios.dev/prs/FantasyFurniture-Private/pr92")
 }
 
 dependencies {
@@ -41,7 +43,8 @@ dependencies {
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
-    if(!ApexExtension.IS_CI) { // runtimeOnly(libs.rei)
+    if(!ApexExtension.IS_CI) {
+        // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
         // runtimeOnly(libs.jade)
     }
