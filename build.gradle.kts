@@ -14,16 +14,6 @@ apex.extendCompilerErrors()
 val single = ApexSingleExtension.getOrCreate(project)
 single.withDataGen()
 
-repositories {
-    maven("https://maven.apexstudios.dev/prs/Registree/pr11")
-    maven("https://maven.apexstudios.dev/prs/Placement-Visualizer/pr14")
-    maven("https://maven.apexstudios.dev/prs/ApexCore-Private/pr67")
-    maven("https://maven.apexstudios.dev/prs/ItemResistance-Private/pr34")
-    maven("https://maven.apexstudios.dev/prs/InfusedFoods-Private/pr37")
-    maven("https://maven.apexstudios.dev/prs/FantasyDice-Private/pr35")
-    maven("https://maven.apexstudios.dev/prs/FantasyFurniture-Private/pr92")
-}
-
 dependencies {
     includeMod(libs.registree, false, false)
     includeMod(libs.apexcore, false, true)
