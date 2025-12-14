@@ -2,8 +2,8 @@ import dev.apexstudios.gradle.ApexExtension
 import dev.apexstudios.gradle.single.ApexSingleExtension
 
 plugins {
-    id("apex-conventions.neoforge") version "0.1.75"
-    id("apex-conventions.maven-publishing") version "0.1.75"
+    id("apex-conventions.neoforge") version "0.1.85"
+    id("apex-conventions.maven-publishing") version "0.1.85"
 }
 
 group = "dev.apexstudios"
@@ -13,14 +13,6 @@ apex.extendCompilerErrors()
 
 val single = ApexSingleExtension.getOrCreate(project)
 single.withDataGen()
-
-repositories {
-    maven("https://maven.shedaniel.me")
-    maven("https://maven.architectury.dev")
-    maven("https://maven.blamejared.com")
-    maven("https://modmaven.dev")
-    maven("https://api.modrinth.com/maven")
-}
 
 dependencies {
     includeMod(libs.registree, false, false)
@@ -41,7 +33,8 @@ dependencies {
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
-    if(!ApexExtension.IS_CI) { // runtimeOnly(libs.rei)
+    if(!ApexExtension.IS_CI) {
+        // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
         // runtimeOnly(libs.jade)
     }
