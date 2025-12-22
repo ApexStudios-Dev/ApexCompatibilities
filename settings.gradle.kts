@@ -28,9 +28,9 @@ dependencyResolutionManagement {
         library("rei-default-plugins", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
         bundle("rei", listOf("rei-api", "rei-default-plugins"))
 
-        version("jei", "26.0.0.1")
-        library("jei-api", "mezz.jei", "jei-1.21.10-neoforge-api").versionRef("jei")
-        library("jei", "mezz.jei", "jei-1.21.10-neoforge").versionRef("jei")
+        version("jei", "27.3.0.10")
+        library("jei-api", "mezz.jei", "jei-1.21.11-neoforge-api").versionRef("jei")
+        library("jei", "mezz.jei", "jei-1.21.11-neoforge").versionRef("jei")
 
         library("jade", "maven.modrinth", "jade").version("21.0.1+neoforge")
     }
