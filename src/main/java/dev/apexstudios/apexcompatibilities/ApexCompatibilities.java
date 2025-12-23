@@ -1,6 +1,6 @@
 package dev.apexstudios.apexcompatibilities;
 
-import dev.apexstudios.apexcore.core.ApexCore;
+import dev.apexstudios.apexcore.common.ApexCore;
 
 public interface ApexCompatibilities {
     String ID = "apexcompatibilities";

@@ -1,6 +1,6 @@
 package dev.apexstudios.apexcompatibilities.data;
 
-import dev.apexstudios.apexcore.lib.data.ResourceGenerator;
+import dev.apexstudios.apexcore.api.data.ResourceGenerator;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;

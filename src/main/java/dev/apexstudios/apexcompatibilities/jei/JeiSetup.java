@@ -6,7 +6,6 @@ import dev.apexstudios.apexcompatibilities.jei.dice.FantasyDiceJeiPlugin;
 import dev.apexstudios.apexcompatibilities.jei.furniture.BoneSkeletonFurnitureSetJeiPlugin;
 import dev.apexstudios.apexcompatibilities.jei.furniture.BoneWitherFurnitureSetJeiPlugin;
 import dev.apexstudios.apexcompatibilities.jei.furniture.DunmerFurnitureSetJeiPlugin;
-import dev.apexstudios.apexcompatibilities.jei.furniture.FantasyFurnitureJeiPlugin;
 import dev.apexstudios.apexcompatibilities.jei.furniture.NecrolordFurnitureSetJeiPlugin;
 import dev.apexstudios.apexcompatibilities.jei.furniture.NordicFurnitureSetJeiPlugin;
 import dev.apexstudios.apexcompatibilities.jei.furniture.RoyalFurnitureSetJeiPlugin;
@@ -35,7 +34,7 @@ import net.minecraft.resources.Identifier;
 public final class JeiSetup implements IModPlugin {
     private final CompatManager<JeiSetup, IModPlugin> manager = CompatManager.create(this, builder -> builder
             .owned(ApexCompatibilities.FANTASY_DICE, () -> FantasyDiceJeiPlugin::new)
-            .owned(ApexCompatibilities.FANTASY_FURNITURE, () -> FantasyFurnitureJeiPlugin::new)
+            // .owned(ApexCompatibilities.FANTASY_FURNITURE, () -> FantasyFurnitureJeiPlugin::new)
             .owned(ApexCompatibilities.FANTASY_FURNITURE_NORDIC, () -> NordicFurnitureSetJeiPlugin::new)
             .owned(ApexCompatibilities.FANTASY_FURNITURE_VENTHYR, () -> VenthyrFurnitureSetJeiPlugin::new)
             .owned(ApexCompatibilities.FANTASY_FURNITURE_BONE, () -> BoneSkeletonFurnitureSetJeiPlugin::new, () -> BoneWitherFurnitureSetJeiPlugin::new)

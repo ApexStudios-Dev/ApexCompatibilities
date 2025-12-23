@@ -1,7 +1,7 @@
 //package dev.apexstudios.apexcompatibilities.rei.furniture;
 //
 //import com.mojang.serialization.codecs.RecordCodecBuilder;
-//import dev.apexstudios.fantasyfurniture.station.FurnitureStationRecipe;
+//import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationRecipe;
 //import java.util.List;
 //import java.util.Optional;
 //import me.shedaniel.rei.api.common.category.CategoryIdentifier;

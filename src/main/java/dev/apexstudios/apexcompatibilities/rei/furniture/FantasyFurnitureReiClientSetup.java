@@ -1,6 +1,6 @@
 //package dev.apexstudios.apexcompatibilities.rei.furniture;
 //
-//import dev.apexstudios.fantasyfurniture.station.FurnitureStationSetup;
+//import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationSetup;
 //import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 //import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 //import me.shedaniel.rei.api.common.util.EntryStacks;

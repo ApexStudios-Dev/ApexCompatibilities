@@ -1,7 +1,7 @@
 //package dev.apexstudios.apexcompatibilities.rei.furniture;
 //
 //import com.google.errorprone.annotations.OverridingMethodsMustInvokeSuper;
-//import dev.apexstudios.fantasyfurniture.util.FurnitureUtil;
+//import dev.apexstudios.fantasyfurniture.common.util.FurnitureUtil;
 //import dev.apexstudios.registree.api.Registree;
 //import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 //import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;

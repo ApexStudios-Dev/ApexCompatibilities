@@ -1,6 +1,6 @@
 //package dev.apexstudios.apexcompatibilities.rei.furniture;
 //
-//import dev.apexstudios.fantasyfurniture.station.FurnitureStationSetup;
+//import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationSetup;
 //import java.util.List;
 //import me.shedaniel.math.Point;
 //import me.shedaniel.math.Rectangle;

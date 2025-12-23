@@ -1,7 +1,7 @@
 //package dev.apexstudios.apexcompatibilities.rei.infused;
 //
-//import dev.apexstudios.infusedfoods.InfusedFoods;
-//import dev.apexstudios.infusedfoods.util.InfusionUtil;
+//import dev.apexstudios.infusedfoods.common.InfusedFoods;
+//import dev.apexstudios.infusedfoods.common.util.InfusionUtil;
 //import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 //import me.shedaniel.rei.api.client.registry.entry.CollapsibleEntryRegistry;
 //import me.shedaniel.rei.api.common.entry.type.VanillaEntryTypes;

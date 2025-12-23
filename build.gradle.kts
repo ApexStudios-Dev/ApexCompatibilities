@@ -1,33 +1,77 @@
 import dev.apexstudios.gradle.ApexExtension
-import dev.apexstudios.gradle.single.ApexSingleExtension
 
 plugins {
-    id("apex-conventions.neoforge") version "0.1.85"
-    id("apex-conventions.maven-publishing") version "0.1.85"
+    id("apex-conventions.neoforge")
+    id("apex-conventions.neoforge-datagen")
+    id("apex-conventions.maven-publishing")
+    id("apex-conventions.jspecify")
 }
 
 group = "dev.apexstudios"
+neoForge.version = libs.versions.neoforge.get()
 
-apex.neoVersion("21.11.13-beta", "1.21.10", "2025.10.12")
-apex.extendCompilerErrors()
+repositories {
+    maven("https://maven.apexmodder.com/prs/Registree/pr17") {
+        content {
+            includeModule("dev.apexstudios", "registree")
+        }
+    }
 
-val single = ApexSingleExtension.getOrCreate(project)
-single.withDataGen()
+    maven("https://maven.apexmodder.com/prs/ApexCore-Private/pr70") {
+        content {
+            includeModule("dev.apexstudios", "apexcore")
+        }
+    }
+
+    maven("https://maven.apexmodder.com/prs/ItemResistance-Private/pr37") {
+        content {
+            includeModule("dev.apexstudios", "itemresistance")
+        }
+    }
+
+    maven("https://maven.apexmodder.com/prs/InfusedFoods-Private/pr40") {
+        content {
+            includeModule("dev.apexstudios", "infusedfoods")
+        }
+    }
+
+    maven("https://maven.apexmodder.com/prs/FantasyDice-Private/pr38") {
+        content {
+            includeModule("dev.apexstudios", "fantasydice")
+        }
+    }
+
+    maven("https://maven.apexmodder.com/prs/FantasyFurniture-Private/pr100") {
+        content {
+            includeModule("dev.apexstudios", "fantasyfurniture")
+            includeModule("dev.apexstudios", "fantasyfurniture_bone")
+            includeModule("dev.apexstudios", "fantasyfurniture_decorations")
+            includeModule("dev.apexstudios", "fantasyfurniture_dunmer")
+            includeModule("dev.apexstudios", "fantasyfurniture_necrolord")
+            includeModule("dev.apexstudios", "fantasyfurniture_nordic")
+            includeModule("dev.apexstudios", "fantasyfurniture_royal")
+            includeModule("dev.apexstudios", "fantasyfurniture_venthyr")
+        }
+    }
+}
 
 dependencies {
-    includeMod(libs.registree, false, false)
-    includeMod(libs.apexcore, false, true)
-    includeMod(libs.itemresistance, true, false)
-    includeMod(libs.infusedfoods, true, false)
-    includeMod(libs.fantasydice, true, false)
+    implementation(libs.bundles.apexcore)
+    "dataImplementation"(libs.bundles.apexcore)
+    accessTransformers(libs.apexcore)
 
-    includeMod(libs.fantasyfurniture.asProvider(), true, false)
-    includeMod(libs.fantasyfurniture.nordic, true, false)
-    includeMod(libs.fantasyfurniture.venthyr, true, false)
-    includeMod(libs.fantasyfurniture.bone, true, false)
-    includeMod(libs.fantasyfurniture.dunmer, true, false)
-    includeMod(libs.fantasyfurniture.necrolord, true, false)
-    includeMod(libs.fantasyfurniture.royal, true, false)
+    compileOnly(libs.itemresistance)
+    compileOnly(libs.infusedfoods)
+    compileOnly(libs.fantasydice)
+
+    compileOnly(libs.fantasyfurniture)
+    compileOnly(libs.fantasyfurniture.nordic)
+    compileOnly(libs.fantasyfurniture.venthyr)
+    compileOnly(libs.fantasyfurniture.bone)
+    compileOnly(libs.fantasyfurniture.dunmer)
+    compileOnly(libs.fantasyfurniture.necrolord)
+    compileOnly(libs.fantasyfurniture.royal)
+    compileOnly(libs.fantasyfurniture.decorations)
 
     compileOnly(libs.bundles.rei)
     compileOnly(libs.jei.api)
@@ -37,16 +81,5 @@ dependencies {
         // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
         // runtimeOnly(libs.jade)
-    }
-}
-
-fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false) {
-    dependencies {
-        if(compile) compileOnly(mod) { isTransitive = false }
-        else implementation(mod) { isTransitive = false }
-
-        "dataImplementation"(mod) { isTransitive = false }
-
-        if(at) accessTransformers(mod) { isTransitive = false }
     }
 }
