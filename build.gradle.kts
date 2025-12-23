@@ -2,17 +2,68 @@ import dev.apexstudios.gradle.ApexExtension
 import dev.apexstudios.gradle.single.ApexSingleExtension
 
 plugins {
-    id("apex-conventions.neoforge") version "0.1.85"
-    id("apex-conventions.maven-publishing") version "0.1.85"
+    id("apex-conventions.neoforge") version "0.1.87"
+    id("apex-conventions.maven-publishing") version "0.1.87"
 }
 
 group = "dev.apexstudios"
 
-apex.neoVersion("21.11.13-beta", "1.21.10", "2025.10.12")
+apex.neoVersion("26.1.0.0-alpha.1+snapshot-1")
 apex.extendCompilerErrors()
 
 val single = ApexSingleExtension.getOrCreate(project)
 single.withDataGen()
+
+repositories {
+    maven("https://maven.apexstudios.dev/prs/Registree/pr17") {
+        content {
+            includeModule("dev.apexstudios", "registree")
+        }
+    }
+
+    maven("https://maven.apexstudios.dev/prs/Placement-Visualizer/pr19") {
+        content {
+            includeModule("dev.apexstudios", "placementvisualizer")
+        }
+    }
+
+    maven("https://maven.apexstudios.dev/prs/ApexCore-Private/pr70") {
+        content {
+            includeModule("dev.apexstudios", "apexcore")
+        }
+    }
+
+    maven("https://maven.apexstudios.dev/prs/ItemResistance-Private/pr37") {
+        content {
+            includeModule("dev.apexstudios", "itemresistance")
+        }
+    }
+
+    maven("https://maven.apexstudios.dev/prs/InfusedFoods-Private/pr40") {
+        content {
+            includeModule("dev.apexstudios", "infusedfoods")
+        }
+    }
+
+    maven("https://maven.apexstudios.dev/prs/FantasyDice-Private/pr38") {
+        content {
+            includeModule("dev.apexstudios", "fantasydice")
+        }
+    }
+
+    maven("https://maven.apexstudios.dev/prs/FantasyFurniture-Private/pr100") {
+        content {
+            includeModule("dev.apexstudios", "fantasyfurniture")
+            includeModule("dev.apexstudios", "fantasyfurniture-bone")
+            includeModule("dev.apexstudios", "fantasyfurniture-decorations")
+            includeModule("dev.apexstudios", "fantasyfurniture-dunmer")
+            includeModule("dev.apexstudios", "fantasyfurniture-necrolord")
+            includeModule("dev.apexstudios", "fantasyfurniture-nordic")
+            includeModule("dev.apexstudios", "fantasyfurniture-royal")
+            includeModule("dev.apexstudios", "fantasyfurniture-venthyr")
+        }
+    }
+}
 
 dependencies {
     includeMod(libs.registree, false, false)

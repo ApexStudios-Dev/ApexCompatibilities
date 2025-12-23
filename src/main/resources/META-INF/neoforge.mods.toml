@@ -16,34 +16,34 @@ displayURL = "https://modrinth.com/mod/apexcore"
 [[dependencies.apexcompatibilities]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.11,1.21.12)"
+versionRange = "[26.1-snapshot,26.2)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.apexcompatibilities]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-alpha,26.2)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.apexcompatibilities]]
 modId = "jei"
 type = "optional"
-versionRange = "[27.0,28.0)"
+versionRange = "[28.0,27.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "u6dRKJwZ"
 curseforge = "238222"
 [[dependencies.apexcompatibilities]]
 modId = "roughlyenoughitems"
 type = "optional"
-versionRange = "[22.0,23.0)"
+versionRange = "[23.0,24.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "nfn13YXA"
 curseforge = "310111"
 [[dependencies.apexcompatibilities]]
 modId = "jade"
 type = "optional"
-versionRange = "[21.0,22.0)"
+versionRange = "[22.0,23.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "nvQzSEkH"
 curseforge = "324717"
@@ -51,63 +51,63 @@ curseforge = "324717"
 [[dependencies.apexcompatibilities]]
 modId = "apexcore"
 type = "required"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "xl3myxch"
 curseforge = "550778"
 [[dependencies.apexcompatibilities]]
 modId = "itemresistance"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "XDyegkJL"
 curseforge = "416161"
 [[dependencies.apexcompatibilities]]
 modId = "infusedfoods"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "QinxcGwM"
 curseforge = "629292"
 [[dependencies.apexcompatibilities]]
 modId = "fantasydice"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "hPeyEJEZ"
 curseforge = "573867"
 [[dependencies.apexcompatibilities]]
 modId = "fantasyfurniture"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "A0nfCqYw"
 curseforge = "579564"
 [[dependencies.apexcompatibilities]]
 modId = "fantasyfurniture_nordic"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "DIHzMa8h"
 curseforge = "1191799"
 [[dependencies.apexcompatibilities]]
 modId = "fantasyfurniture_venthyr"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "FjHW4JvP"
 curseforge = "1206300"
 [[dependencies.apexcompatibilities]]
 modId = "fantasyfurniture_bone"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "oJ4TI49S"
 curseforge = "1209697"
 [[dependencies.apexcompatibilities]]
 modId = "fantasyfurniture_dunmer"
 type = "optional"
-versionRange = "[21.11-beta,21.12)"
+versionRange = "[26.1-beta,26.2)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "Bs7e2IyQ"
 curseforge = "1209702"
