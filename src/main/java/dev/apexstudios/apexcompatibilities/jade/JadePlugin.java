@@ -1,6 +1,6 @@
 package dev.apexstudios.apexcompatibilities.jade;
 
-import dev.apexstudios.apexcore.lib.multiblock.MultiBlock;
+import dev.apexstudios.apexcore.api.multiblock.MultiBlock;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IWailaClientRegistration;
 import snownee.jade.api.IWailaPlugin;

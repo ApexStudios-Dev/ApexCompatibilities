@@ -2,7 +2,7 @@ package dev.apexstudios.apexcompatibilities.jei.furniture;
 
 import dev.apexstudios.apexcompatibilities.jei.JeiCompat;
 import dev.apexstudios.apexcompatibilities.jei.JeiSetup;
-import dev.apexstudios.fantasyfurniture.util.FurnitureUtil;
+import dev.apexstudios.fantasyfurniture.common.util.FurnitureUtil;
 import dev.apexstudios.registree.api.Registree;
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;

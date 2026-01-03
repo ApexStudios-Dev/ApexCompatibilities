@@ -1,6 +1,6 @@
 package dev.apexstudios.apexcompatibilities.rei.infused;
 
-import dev.apexstudios.infusedfoods.util.InfusionEntries;
+import dev.apexstudios.infusedfoods.common.util.InfusionEntries;
 import me.shedaniel.rei.api.common.entry.comparison.FluidComparatorRegistry;
 import me.shedaniel.rei.api.common.plugins.REICommonPlugin;
 

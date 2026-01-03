@@ -2,7 +2,7 @@ package dev.apexstudios.apexcompatibilities.jei.dice;
 
 import dev.apexstudios.apexcompatibilities.jei.JeiCompat;
 import dev.apexstudios.apexcompatibilities.jei.JeiSetup;
-import dev.apexstudios.fantasydice.util.DiceRegistries;
+import dev.apexstudios.fantasydice.common.util.DiceRegistries;
 import mezz.jei.api.registration.ISubtypeRegistration;
 
 public final class FantasyDiceJeiPlugin extends JeiCompat {

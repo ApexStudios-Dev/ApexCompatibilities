@@ -1,6 +1,6 @@
 package dev.apexstudios.apexcompatibilities.rei.dice;
 
-import dev.apexstudios.fantasydice.util.DiceRegistries;
+import dev.apexstudios.fantasydice.common.util.DiceRegistries;
 import me.shedaniel.rei.api.common.entry.comparison.ItemComparatorRegistry;
 import me.shedaniel.rei.api.common.plugins.REICommonPlugin;
 

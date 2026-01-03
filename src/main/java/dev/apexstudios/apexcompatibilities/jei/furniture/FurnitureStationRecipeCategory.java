@@ -1,8 +1,8 @@
 package dev.apexstudios.apexcompatibilities.jei.furniture;
 
-import dev.apexstudios.fantasyfurniture.station.FurnitureStationRecipe;
-import dev.apexstudios.fantasyfurniture.station.FurnitureStationScreen;
-import dev.apexstudios.fantasyfurniture.station.FurnitureStationSetup;
+import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationRecipe;
+import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationScreen;
+import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationSetup;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;

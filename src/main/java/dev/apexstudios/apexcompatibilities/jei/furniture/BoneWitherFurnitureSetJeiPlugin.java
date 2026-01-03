@@ -1,7 +1,7 @@
 package dev.apexstudios.apexcompatibilities.jei.furniture;
 
 import dev.apexstudios.apexcompatibilities.jei.JeiSetup;
-import dev.apexstudios.fantasyfurniture.bone.WitherFurnitureSet;
+import dev.apexstudios.fantasyfurniture.bone.common.WitherFurnitureSet;
 
 public final class BoneWitherFurnitureSetJeiPlugin extends FurnitureSetJeiPlugin {
     public BoneWitherFurnitureSetJeiPlugin(JeiSetup owner) {

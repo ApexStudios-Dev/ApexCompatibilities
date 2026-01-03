@@ -2,8 +2,8 @@ package dev.apexstudios.apexcompatibilities.jei.furniture;
 
 import dev.apexstudios.apexcompatibilities.jei.JeiCompat;
 import dev.apexstudios.apexcompatibilities.jei.JeiSetup;
-import dev.apexstudios.fantasyfurniture.station.FurnitureStationRecipe;
-import dev.apexstudios.fantasyfurniture.station.FurnitureStationSetup;
+import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationRecipe;
+import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationSetup;
 import java.util.Objects;
 import java.util.function.Supplier;
 import mezz.jei.api.recipe.types.IRecipeHolderType;
