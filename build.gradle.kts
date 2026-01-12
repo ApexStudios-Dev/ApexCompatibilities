@@ -44,13 +44,13 @@ repositories {
     maven("https://maven.apexstudios.dev/prs/FantasyFurniture-Private/pr100") {
         content {
             includeModule("dev.apexstudios", "fantasyfurniture")
-            includeModule("dev.apexstudios", "fantasyfurniture-bone")
-            includeModule("dev.apexstudios", "fantasyfurniture-decorations")
-            includeModule("dev.apexstudios", "fantasyfurniture-dunmer")
-            includeModule("dev.apexstudios", "fantasyfurniture-necrolord")
-            includeModule("dev.apexstudios", "fantasyfurniture-nordic")
-            includeModule("dev.apexstudios", "fantasyfurniture-royal")
-            includeModule("dev.apexstudios", "fantasyfurniture-venthyr")
+            includeModule("dev.apexstudios", "fantasyfurniture_bone")
+            includeModule("dev.apexstudios", "fantasyfurniture_decorations")
+            includeModule("dev.apexstudios", "fantasyfurniture_dunmer")
+            includeModule("dev.apexstudios", "fantasyfurniture_necrolord")
+            includeModule("dev.apexstudios", "fantasyfurniture_nordic")
+            includeModule("dev.apexstudios", "fantasyfurniture_royal")
+            includeModule("dev.apexstudios", "fantasyfurniture_venthyr")
         }
     }
 }
