@@ -1,30 +1,19 @@
 import dev.apexstudios.gradle.ApexExtension
-import dev.apexstudios.gradle.single.ApexSingleExtension
 
 plugins {
-    id("apex-conventions.neoforge") version "0.1.88"
-    id("apex-conventions.maven-publishing") version "0.1.88"
-    id("apex-conventions.jspecify") version "0.1.88"
+    id("apex-conventions.neoforge")
+    id("apex-conventions.neoforge-datagen")
+    id("apex-conventions.maven-publishing")
+    id("apex-conventions.jspecify")
 }
 
 group = "dev.apexstudios"
-
-apex.neoVersion("26.1.0.0-alpha.5+snapshot-2")
-apex.extendCompilerErrors()
-
-val single = ApexSingleExtension.getOrCreate(project)
-single.withDataGen()
+neoForge.version = "26.1.0.0-alpha.5+snapshot-2"
 
 repositories {
     maven("https://maven.apexstudios.dev/prs/Registree/pr17") {
         content {
             includeModule("dev.apexstudios", "registree")
-        }
-    }
-
-    maven("https://maven.apexstudios.dev/prs/Placement-Visualizer/pr19") {
-        content {
-            includeModule("dev.apexstudios", "placementvisualizer")
         }
     }
 
@@ -67,19 +56,28 @@ repositories {
 }
 
 dependencies {
-    includeMod(libs.registree, false, false)
-    includeMod(libs.apexcore, false, true)
-    includeMod(libs.itemresistance, true, false)
-    includeMod(libs.infusedfoods, true, false)
-    includeMod(libs.fantasydice, true, false)
+    val registree = "26.1.9-beta-pr-17"
+    implementation("dev.apexstudios:registree:$registree")
+    "dataImplementation"("dev.apexstudios:registree:$registree")
 
-    includeMod(libs.fantasyfurniture.asProvider(), true, false)
-    includeMod(libs.fantasyfurniture.nordic, true, false)
-    includeMod(libs.fantasyfurniture.venthyr, true, false)
-    includeMod(libs.fantasyfurniture.bone, true, false)
-    includeMod(libs.fantasyfurniture.dunmer, true, false)
-    includeMod(libs.fantasyfurniture.necrolord, true, false)
-    includeMod(libs.fantasyfurniture.royal, true, false)
+    val apexcore = "26.1.11-beta-pr-70"
+    implementation("dev.apexstudios:apexcore:$apexcore")
+    "dataImplementation"("dev.apexstudios:apexcore:$apexcore")
+    accessTransformers("dev.apexstudios:apexcore:$apexcore")
+
+    compileOnly("dev.apexstudios:itemresistance:26.1.10-beta-pr-37")
+    compileOnly("dev.apexstudios:infusedfoods:26.1.10-beta-pr-40")
+    compileOnly("dev.apexstudios:fantasydice:26.1.9-beta-pr-38")
+
+    val fantasyfurniture = "26.1.21-beta-pr-100"
+    compileOnly("dev.apexstudios:fantasyfurniture:$fantasyfurniture")
+    compileOnly("dev.apexstudios:fantasyfurniture_nordic:$fantasyfurniture")
+    compileOnly("dev.apexstudios:fantasyfurniture_venthyr:$fantasyfurniture")
+    compileOnly("dev.apexstudios:fantasyfurniture_bone:$fantasyfurniture")
+    compileOnly("dev.apexstudios:fantasyfurniture_dunmer:$fantasyfurniture")
+    compileOnly("dev.apexstudios:fantasyfurniture_necrolord:$fantasyfurniture")
+    compileOnly("dev.apexstudios:fantasyfurniture_royal:$fantasyfurniture")
+    compileOnly("dev.apexstudios:fantasyfurniture_decorations:$fantasyfurniture")
 
     compileOnly(libs.bundles.rei)
     compileOnly(libs.jei.api)
@@ -89,16 +87,5 @@ dependencies {
         // runtimeOnly(libs.rei)
         // runtimeOnly(libs.jei)
         // runtimeOnly(libs.jade)
-    }
-}
-
-fun includeMod(mod: Provider<MinimalExternalModuleDependency>, compile: Boolean = false, at: Boolean = false) {
-    dependencies {
-        if(compile) compileOnly(mod) { isTransitive = false }
-        else implementation(mod) { isTransitive = false }
-
-        "dataImplementation"(mod) { isTransitive = false }
-
-        if(at) accessTransformers(mod) { isTransitive = false }
     }
 }
