@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "dev.apexstudios"
-neoForge.version = "26.1.0.0-alpha.5+snapshot-2"
+neoForge.version = libs.versions.neoforge.get()
 
 repositories {
     maven("https://maven.apexstudios.dev/prs/Registree/pr17") {
@@ -56,28 +56,22 @@ repositories {
 }
 
 dependencies {
-    val registree = "26.1.9-beta-pr-17"
-    implementation("dev.apexstudios:registree:$registree")
-    "dataImplementation"("dev.apexstudios:registree:$registree")
+    implementation(libs.bundles.apexcore)
+    "dataImplementation"(libs.bundles.apexcore)
+    accessTransformers(libs.apexcore)
 
-    val apexcore = "26.1.11-beta-pr-70"
-    implementation("dev.apexstudios:apexcore:$apexcore")
-    "dataImplementation"("dev.apexstudios:apexcore:$apexcore")
-    accessTransformers("dev.apexstudios:apexcore:$apexcore")
+    compileOnly(libs.itemresistance)
+    compileOnly(libs.infusedfoods)
+    compileOnly(libs.fantasydice)
 
-    compileOnly("dev.apexstudios:itemresistance:26.1.10-beta-pr-37")
-    compileOnly("dev.apexstudios:infusedfoods:26.1.10-beta-pr-40")
-    compileOnly("dev.apexstudios:fantasydice:26.1.9-beta-pr-38")
-
-    val fantasyfurniture = "26.1.21-beta-pr-100"
-    compileOnly("dev.apexstudios:fantasyfurniture:$fantasyfurniture")
-    compileOnly("dev.apexstudios:fantasyfurniture_nordic:$fantasyfurniture")
-    compileOnly("dev.apexstudios:fantasyfurniture_venthyr:$fantasyfurniture")
-    compileOnly("dev.apexstudios:fantasyfurniture_bone:$fantasyfurniture")
-    compileOnly("dev.apexstudios:fantasyfurniture_dunmer:$fantasyfurniture")
-    compileOnly("dev.apexstudios:fantasyfurniture_necrolord:$fantasyfurniture")
-    compileOnly("dev.apexstudios:fantasyfurniture_royal:$fantasyfurniture")
-    compileOnly("dev.apexstudios:fantasyfurniture_decorations:$fantasyfurniture")
+    compileOnly(libs.fantasyfurniture)
+    compileOnly(libs.fantasyfurniture.nordic)
+    compileOnly(libs.fantasyfurniture.venthyr)
+    compileOnly(libs.fantasyfurniture.bone)
+    compileOnly(libs.fantasyfurniture.dunmer)
+    compileOnly(libs.fantasyfurniture.necrolord)
+    compileOnly(libs.fantasyfurniture.royal)
+    compileOnly(libs.fantasyfurniture.decorations)
 
     compileOnly(libs.bundles.rei)
     compileOnly(libs.jei.api)
