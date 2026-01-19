@@ -36,7 +36,7 @@ public final class FurnitureStationRecipeCategory extends AbstractRecipeCategory
 
         builder.addOutputSlot(resultX, 0)
                 .setStandardSlotBackground()
-                .add(recipe.result());
+                .add(recipe.result().create());
 
         builder.addInputSlot(0, 0)
                 .setStandardSlotBackground()
