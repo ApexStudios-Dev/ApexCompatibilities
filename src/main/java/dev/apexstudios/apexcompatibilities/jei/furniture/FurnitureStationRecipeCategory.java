@@ -18,7 +18,7 @@ public final class FurnitureStationRecipeCategory extends AbstractRecipeCategory
         super(
                 FantasyFurnitureJeiPlugin.RECIPE_TYPE.get(),
                 FurnitureStationSetup.BLOCK.value().getName(),
-                gui.createDrawableItemLike(FurnitureStationSetup.BLOCK),
+                gui.createDrawableItemLike(FurnitureStationSetup.BLOCK.value()),
                 150,
                 AbstractContainerMenu.SLOT_SIZE - 2
         );

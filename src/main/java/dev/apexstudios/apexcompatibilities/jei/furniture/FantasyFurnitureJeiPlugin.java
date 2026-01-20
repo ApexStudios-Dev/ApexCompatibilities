@@ -26,7 +26,7 @@ public final class FantasyFurnitureJeiPlugin extends JeiCompat {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addCraftingStation(RECIPE_TYPE.get(), FurnitureStationSetup.BLOCK);
+        registration.addCraftingStation(RECIPE_TYPE.get(), FurnitureStationSetup.BLOCK.value());
     }
 
     @Override
