@@ -5,6 +5,6 @@ import dev.apexstudios.fantasyfurniture.necrolord.common.NecrolordFurnitureSet;
 
 public final class NecrolordFurnitureSetJeiPlugin extends FurnitureSetJeiPlugin {
     public NecrolordFurnitureSetJeiPlugin(JeiSetup owner) {
-        super(owner, NecrolordFurnitureSet.REGISTREE);
+        super(owner, NecrolordFurnitureSet.BLOCKS);
     }
 }

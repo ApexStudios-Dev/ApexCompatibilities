@@ -5,6 +5,6 @@ import dev.apexstudios.fantasyfurniture.royal.common.RoyalFurnitureSet;
 
 public final class RoyalFurnitureSetJeiPlugin extends FurnitureSetJeiPlugin {
     public RoyalFurnitureSetJeiPlugin(JeiSetup owner) {
-        super(owner, RoyalFurnitureSet.REGISTREE);
+        super(owner, RoyalFurnitureSet.BLOCKS);
     }
 }
