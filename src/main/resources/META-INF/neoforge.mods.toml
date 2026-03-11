@@ -36,14 +36,14 @@ curseforge = "238222"
 [[dependencies.apexcompatibilities]]
 modId = "roughlyenoughitems"
 type = "optional"
-versionRange = "[23.0,24.0)"
+versionRange = "[21.0,22.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "nfn13YXA"
 curseforge = "310111"
 [[dependencies.apexcompatibilities]]
 modId = "jade"
 type = "optional"
-versionRange = "[22.0,23.0)"
+versionRange = "[21.0,22.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "nvQzSEkH"
 curseforge = "324717"

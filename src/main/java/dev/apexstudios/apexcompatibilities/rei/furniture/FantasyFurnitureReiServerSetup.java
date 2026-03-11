@@ -1,8 +1,8 @@
 //package dev.apexstudios.apexcompatibilities.rei.furniture;
 //
-//import dev.apexstudios.fantasyfurniture.FantasyFurniture;
-//import dev.apexstudios.fantasyfurniture.station.FurnitureStationRecipe;
-//import dev.apexstudios.fantasyfurniture.station.FurnitureStationSetup;
+//import dev.apexstudios.fantasyfurniture.common.FantasyFurniture;
+//import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationRecipe;
+//import dev.apexstudios.fantasyfurniture.common.station.FurnitureStationSetup;
 //import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 //import me.shedaniel.rei.api.common.display.DisplaySerializerRegistry;
 //import me.shedaniel.rei.api.common.plugins.REICommonPlugin;

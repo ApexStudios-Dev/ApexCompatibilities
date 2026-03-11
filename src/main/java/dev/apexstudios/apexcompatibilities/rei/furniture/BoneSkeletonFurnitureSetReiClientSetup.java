@@ -1,6 +1,6 @@
 //package dev.apexstudios.apexcompatibilities.rei.furniture;
 //
-//import dev.apexstudios.fantasyfurniture.bone.SkeletonFurnitureSet;
+//import dev.apexstudios.fantasyfurniture.bone.common.SkeletonFurnitureSet;
 //
 //public final class BoneSkeletonFurnitureSetReiClientSetup extends FurnitureSetReiClientSetup {
 //    public BoneSkeletonFurnitureSetReiClientSetup() {

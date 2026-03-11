@@ -1,7 +1,7 @@
 //package dev.apexstudios.apexcompatibilities.rei.dice;
 //
-//import dev.apexstudios.fantasydice.FantasyDice;
-//import dev.apexstudios.fantasydice.util.Dice;
+//import dev.apexstudios.fantasydice.common.FantasyDice;
+//import dev.apexstudios.fantasydice.common.util.Dice;
 //import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 //import me.shedaniel.rei.api.client.registry.entry.CollapsibleEntryRegistry;
 //import me.shedaniel.rei.api.common.entry.EntryStack;
