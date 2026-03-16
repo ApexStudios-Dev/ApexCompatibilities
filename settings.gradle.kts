@@ -23,7 +23,7 @@ dependencyResolutionManagement {
 
         library("itemresistance", "dev.apexstudios", "itemresistance").version("26.1.20-beta-pr-37")
         library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.1.21-beta-pr-40")
-        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.1.22-beta-pr-38")
+        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.1.25-beta-pr-38")
 
         version("fantasyfurniture", "26.1.40-beta-pr-100")
         library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
