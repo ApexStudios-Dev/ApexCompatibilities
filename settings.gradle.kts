@@ -15,17 +15,17 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        version("neoforge", "26.1.0.0-alpha.0+pre-1.20260310.230015")
+        version("neoforge", "26.1.0.0-alpha.15+pre-3")
 
-        library("registree", "dev.apexstudios", "registree").version("26.1.20-beta-pr-17")
-        library("apexcore", "dev.apexstudios", "apexcore").version("26.1.31-beta-pr-70")
+        library("registree", "dev.apexstudios", "registree").version("26.1.22-beta-pr-17")
+        library("apexcore", "dev.apexstudios", "apexcore").version("26.1.36-beta-pr-70")
         bundle("apexcore", listOf("registree", "apexcore"))
 
-        library("itemresistance", "dev.apexstudios", "itemresistance").version("26.1.20-beta-pr-37")
-        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.1.21-beta-pr-40")
-        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.1.25-beta-pr-38")
+        library("itemresistance", "dev.apexstudios", "itemresistance").version("26.1.23-beta-pr-37")
+        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.1.25-beta-pr-40")
+        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.1.27-beta-pr-38")
 
-        version("fantasyfurniture", "26.1.40-beta-pr-100")
+        version("fantasyfurniture", "26.1.43-beta-pr-100")
         library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
         library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture_nordic").versionRef("fantasyfurniture")
         library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture_venthyr").versionRef("fantasyfurniture")
