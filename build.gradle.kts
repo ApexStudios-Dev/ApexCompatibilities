@@ -18,37 +18,37 @@ repositories {
         }
     }
 
-    maven("https://maven.apexstudios.dev/prs/Registree/pr17") {
+    maven("https://maven.apexmodder.com/prs/Registree/pr17") {
         content {
             includeModule("dev.apexstudios", "registree")
         }
     }
 
-    maven("https://maven.apexstudios.dev/prs/ApexCore-Private/pr70") {
+    maven("https://maven.apexmodder.com/prs/ApexCore-Private/pr70") {
         content {
             includeModule("dev.apexstudios", "apexcore")
         }
     }
 
-    maven("https://maven.apexstudios.dev/prs/ItemResistance-Private/pr37") {
+    maven("https://maven.apexmodder.com/prs/ItemResistance-Private/pr37") {
         content {
             includeModule("dev.apexstudios", "itemresistance")
         }
     }
 
-    maven("https://maven.apexstudios.dev/prs/InfusedFoods-Private/pr40") {
+    maven("https://maven.apexmodder.com/prs/InfusedFoods-Private/pr40") {
         content {
             includeModule("dev.apexstudios", "infusedfoods")
         }
     }
 
-    maven("https://maven.apexstudios.dev/prs/FantasyDice-Private/pr38") {
+    maven("https://maven.apexmodder.com/prs/FantasyDice-Private/pr38") {
         content {
             includeModule("dev.apexstudios", "fantasydice")
         }
     }
 
-    maven("https://maven.apexstudios.dev/prs/FantasyFurniture-Private/pr100") {
+    maven("https://maven.apexmodder.com/prs/FantasyFurniture-Private/pr100") {
         content {
             includeModule("dev.apexstudios", "fantasyfurniture")
             includeModule("dev.apexstudios", "fantasyfurniture_bone")
