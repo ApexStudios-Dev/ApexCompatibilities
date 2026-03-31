@@ -1,13 +1,17 @@
 pluginManagement {
     repositories {
-        maven("https://maven.apexmodder.com/proxy")
         gradlePluginPortal()
+        maven("https://maven.apexmodder.com/releases")
     }
 
-    resolutionStrategy {
-        eachPlugin {
-            if(requested.id.namespace == "apex-conventions") {
-                useVersion("0.1.94")
+    if(file("../../ApexGradle").exists()) {
+        includeBuild("../../ApexGradle")
+    } else {
+        resolutionStrategy {
+            eachPlugin {
+                if(requested.id.namespace == "apex-conventions") {
+                    useVersion("0.1.94")
+                }
             }
         }
     }
@@ -15,7 +19,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        version("neoforge", "26.1.0.1-beta")
+        version("neoforge", "26.1.0.18-beta")
 
         library("registree", "dev.apexstudios", "registree").version("26.1.0")
         library("apexcore", "dev.apexstudios", "apexcore").version("26.1.0")
@@ -41,16 +45,52 @@ dependencyResolutionManagement {
         library("rei-default-plugins", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
         bundle("rei", listOf("rei-api", "rei-default-plugins"))
 
-        version("jei", "28.6.0.14")
-        library("jei-api", "mezz.jei", "jei-26.1-snapshot-6-neoforge-api").versionRef("jei")
-        library("jei", "mezz.jei", "jei-26.1-snapshot-6-neoforge").versionRef("jei")
+        version("jei", "29.2.0.20")
+        library("jei-api", "mezz.jei", "jei-26.1-neoforge-api").versionRef("jei")
+        library("jei", "mezz.jei", "jei-26.1-neoforge").versionRef("jei")
 
-        library("jade", "maven.modrinth", "jade").version("21.1.3+neoforge")
+        library("jade", "maven.modrinth", "jade").version("26.0.6+neoforge")
     }
 }
 
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
+listOf(
+    "Registree",
+    "ApexCore",
+    "ItemResistance",
+    "InfusedFoods",
+    "FantasyDice"
+).forEach { lib ->
+    if(file("../../${lib}/26.1").exists()) {
+        includeBuild("../../${lib}/26.1") {
+            name = lib
+
+            dependencySubstitution {
+                substitute(module("dev.apexstudios:${lib.lowercase()}"))
+                    .using(project(":"))
+            }
+        }
+    }
+}
+
+if(file("../../FantasyFurniture/26.1").exists()) {
+    includeBuild("../../FantasyFurniture/26.1") {
+        name = "FantasyFurniture"
+
+        dependencySubstitution {
+            substitute(module("dev.apexstudios:fantasyfurniture")).using(project(":"))
+            substitute(module("dev.apexstudios:fantasyfurniture_nordic")).using(project(":nordic"))
+            substitute(module("dev.apexstudios:fantasyfurniture_venthyr")).using(project(":venthyr"))
+            substitute(module("dev.apexstudios:fantasyfurniture_bone")).using(project(":bone"))
+            substitute(module("dev.apexstudios:fantasyfurniture_dunmer")).using(project(":dunmer"))
+            substitute(module("dev.apexstudios:fantasyfurniture_necrolord")).using(project(":necrolord"))
+            substitute(module("dev.apexstudios:fantasyfurniture_royal")).using(project(":royal"))
+            substitute(module("dev.apexstudios:fantasyfurniture_decorations")).using(project(":decorations"))
+        }
+    }
 }
 
 rootProject.name = "ApexCompatibilities"

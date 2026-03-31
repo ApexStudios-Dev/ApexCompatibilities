@@ -1,85 +1,153 @@
-import dev.apexstudios.gradle.ApexExtension
+import org.slf4j.event.Level
 
 plugins {
-    id("apex-conventions.neoforge")
-    id("apex-conventions.neoforge-datagen")
-    id("apex-conventions.maven-publishing")
+    `java-library`
+    `maven-publish`
+
+    id("net.neoforged.moddev") version "2.0.141"
     id("apex-conventions.jspecify")
 }
 
 group = "dev.apexstudios"
-neoForge.version = libs.versions.neoforge.get()
+base.archivesName = "apexcompatibilities"
+version = providers.environmentVariable("VERSION").getOrElse("0.0NONE")
+
+sourceSets {
+    main {
+        resources {
+            exclude(".cache")
+            srcDir("src/data/generated")
+        }
+    }
+
+    create("data") {
+        resources.setSrcDirs(files())
+
+        compileClasspath += sourceSets[SourceSet.MAIN_SOURCE_SET_NAME].output
+        runtimeClasspath += sourceSets[SourceSet.MAIN_SOURCE_SET_NAME].output
+    }
+}
+
+neoForge {
+    version = libs.versions.neoforge.get()
+    addModdingDependenciesTo(sourceSets["data"])
+
+    mods.create("data") {
+        sourceSet(sourceSets[SourceSet.MAIN_SOURCE_SET_NAME])
+        sourceSet(sourceSets["data"])
+    }
+
+    runs {
+        listOf(true, false).forEach { isClient ->
+            val id = if(isClient) "client" else "server"
+
+            create(id) {
+                if(isClient) {
+                    client()
+                } else {
+                    server()
+                }
+
+                logLevel.set(Level.DEBUG)
+                gameDirectory.set(layout.projectDirectory.dir("run/$id"))
+                systemProperty("terminal.ansi", "true") // fix terminal not having colors
+
+                jvmArguments.addAll(
+                    "-XX:+AllowEnhancedClassRedefinition",
+                    "-XX:+IgnoreUnrecognizedVMOptions",
+                    "-XX:+AllowRedefinitionToAddDeleteMethods",
+                    "-XX:+ClassUnloading"
+                )
+            }
+        }
+
+        create("data") {
+            clientData()
+
+            sourceSet.set(sourceSets["data"])
+            loadedMods.set(listOf(mods["data"]))
+
+            programArguments.addAll(
+                "--mod", "apexcompatibilities",
+                "--all",
+                "--output", file("src/data/generated").absolutePath,
+                "--existing", file("src/${SourceSet.MAIN_SOURCE_SET_NAME}/resources").absolutePath
+            )
+        }
+    }
+}
 
 repositories {
-    maven("https://maven.apexmodder.com/prs/Registree/pr17") {
-        content {
-            includeModule("dev.apexstudios", "registree")
-        }
-    }
+    maven("https://maven.apexmodder.com/releases")
+    maven("https://maven.shedaniel.me")
+    maven("https://maven.blamejared.com")
 
-    maven("https://maven.apexmodder.com/prs/ApexCore-Private/pr70") {
-        content {
-            includeModule("dev.apexstudios", "apexcore")
+    exclusiveContent {
+        forRepository {
+            maven("https://api.modrinth.com/maven")
         }
-    }
 
-    maven("https://maven.apexmodder.com/prs/ItemResistance-Private/pr37") {
-        content {
-            includeModule("dev.apexstudios", "itemresistance")
-        }
-    }
-
-    maven("https://maven.apexmodder.com/prs/InfusedFoods-Private/pr40") {
-        content {
-            includeModule("dev.apexstudios", "infusedfoods")
-        }
-    }
-
-    maven("https://maven.apexmodder.com/prs/FantasyDice-Private/pr38") {
-        content {
-            includeModule("dev.apexstudios", "fantasydice")
-        }
-    }
-
-    maven("https://maven.apexmodder.com/prs/FantasyFurniture-Private/pr100") {
-        content {
-            includeModule("dev.apexstudios", "fantasyfurniture")
-            includeModule("dev.apexstudios", "fantasyfurniture_bone")
-            includeModule("dev.apexstudios", "fantasyfurniture_decorations")
-            includeModule("dev.apexstudios", "fantasyfurniture_dunmer")
-            includeModule("dev.apexstudios", "fantasyfurniture_necrolord")
-            includeModule("dev.apexstudios", "fantasyfurniture_nordic")
-            includeModule("dev.apexstudios", "fantasyfurniture_royal")
-            includeModule("dev.apexstudios", "fantasyfurniture_venthyr")
+        filter {
+            includeGroup("maven.modrinth")
         }
     }
 }
 
 dependencies {
-    implementation(libs.bundles.apexcore)
-    "dataImplementation"(libs.bundles.apexcore)
-    accessTransformers(libs.apexcore)
+    implementation(libs.bundles.apexcore) { isTransitive = false }
+    "dataImplementation"(libs.bundles.apexcore) { isTransitive = false }
+    accessTransformers(libs.apexcore) { isTransitive = false }
 
-    compileOnly(libs.itemresistance)
-    compileOnly(libs.infusedfoods)
-    compileOnly(libs.fantasydice)
+    compileOnly(libs.itemresistance) { isTransitive = false }
+    implementation(libs.infusedfoods) { isTransitive = false }
+    implementation(libs.fantasydice) { isTransitive = false }
 
-    compileOnly(libs.fantasyfurniture)
-    compileOnly(libs.fantasyfurniture.nordic)
-    compileOnly(libs.fantasyfurniture.venthyr)
-    compileOnly(libs.fantasyfurniture.bone)
-    compileOnly(libs.fantasyfurniture.dunmer)
-    compileOnly(libs.fantasyfurniture.necrolord)
-    compileOnly(libs.fantasyfurniture.royal)
-    compileOnly(libs.fantasyfurniture.decorations)
+    implementation(libs.fantasyfurniture) { isTransitive = false }
+    implementation(libs.fantasyfurniture.nordic) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.venthyr) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.bone) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.dunmer) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.necrolord) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.royal) { isTransitive = false }
+    implementation(libs.fantasyfurniture.decorations) { isTransitive = false }
 
     compileOnly(libs.bundles.rei)
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
-    if(!ApexExtension.IS_CI) {
-        // runtimeOnly(libs.rei)
-        // runtimeOnly(libs.jei)
-        // runtimeOnly(libs.jade)
+    // runtimeOnly(libs.rei)
+    runtimeOnly(libs.jei)
+    runtimeOnly(libs.jade)
+}
+
+java {
+    toolchain.vendor.set(JvmVendorSpec.JETBRAINS)
+    withSourcesJar()
+}
+
+publishing {
+    publications.create("release", MavenPublication::class.java) {
+        afterEvaluate {
+            groupId = "dev.apexstudios"
+            artifactId = "apexcompatibilities"
+            version = project.version as String
+        }
+
+        from(components["java"])
+    }
+
+    repositories {
+        if(System.getenv("MAVEN_USERNAME") != null && System.getenv("MAVEN_PASSWORD") != null) {
+            maven("https://maven.apexmodder.com/releases") {
+                name = "ApexStudios-Releases"
+
+                credentials {
+                    username = System.getenv("MAVEN_USERNAME")
+                    password = System.getenv("MAVEN_PASSWORD")
+                }
+
+                authentication.create<BasicAuthentication>("basic")
+            }
+        }
     }
 }
