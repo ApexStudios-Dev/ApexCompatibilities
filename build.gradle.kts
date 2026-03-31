@@ -94,30 +94,30 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.bundles.apexcore)
-    "dataImplementation"(libs.bundles.apexcore)
-    accessTransformers(libs.apexcore)
+    implementation(libs.bundles.apexcore) { isTransitive = false }
+    "dataImplementation"(libs.bundles.apexcore) { isTransitive = false }
+    accessTransformers(libs.apexcore) { isTransitive = false }
 
-    compileOnly(libs.itemresistance)
-    compileOnly(libs.infusedfoods)
-    compileOnly(libs.fantasydice)
+    compileOnly(libs.itemresistance) { isTransitive = false }
+    implementation(libs.infusedfoods) { isTransitive = false }
+    implementation(libs.fantasydice) { isTransitive = false }
 
-    compileOnly(libs.fantasyfurniture)
-    compileOnly(libs.fantasyfurniture.nordic)
-    compileOnly(libs.fantasyfurniture.venthyr)
-    compileOnly(libs.fantasyfurniture.bone)
-    compileOnly(libs.fantasyfurniture.dunmer)
-    compileOnly(libs.fantasyfurniture.necrolord)
-    compileOnly(libs.fantasyfurniture.royal)
-    compileOnly(libs.fantasyfurniture.decorations)
+    implementation(libs.fantasyfurniture) { isTransitive = false }
+    implementation(libs.fantasyfurniture.nordic) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.venthyr) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.bone) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.dunmer) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.necrolord) { isTransitive = false }
+    compileOnly(libs.fantasyfurniture.royal) { isTransitive = false }
+    implementation(libs.fantasyfurniture.decorations) { isTransitive = false }
 
     compileOnly(libs.bundles.rei)
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
     // runtimeOnly(libs.rei)
-    // runtimeOnly(libs.jei)
-    // runtimeOnly(libs.jade)
+    runtimeOnly(libs.jei)
+    runtimeOnly(libs.jade)
 }
 
 java {

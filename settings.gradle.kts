@@ -19,7 +19,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        version("neoforge", "26.1.0.7-beta")
+        version("neoforge", "26.1.0.18-beta")
 
         library("registree", "dev.apexstudios", "registree").version("26.1.0")
         library("apexcore", "dev.apexstudios", "apexcore").version("26.1.0")
@@ -45,11 +45,11 @@ dependencyResolutionManagement {
         library("rei-default-plugins", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
         bundle("rei", listOf("rei-api", "rei-default-plugins"))
 
-        version("jei", "28.6.0.14")
-        library("jei-api", "mezz.jei", "jei-26.1-snapshot-6-neoforge-api").versionRef("jei")
-        library("jei", "mezz.jei", "jei-26.1-snapshot-6-neoforge").versionRef("jei")
+        version("jei", "29.2.0.20")
+        library("jei-api", "mezz.jei", "jei-26.1-neoforge-api").versionRef("jei")
+        library("jei", "mezz.jei", "jei-26.1-neoforge").versionRef("jei")
 
-        library("jade", "maven.modrinth", "jade").version("21.1.3+neoforge")
+        library("jade", "maven.modrinth", "jade").version("26.0.6+neoforge")
     }
 }
 
