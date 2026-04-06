@@ -14,13 +14,13 @@ displayURL = "https://modrinth.com/mod/apexcore"
 [[dependencies.apexcompatibilities]]
 modId = "minecraft"
 type = "required"
-versionRange = "[26.1-,26.2)"
+versionRange = "[26.1,26.2)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.apexcompatibilities]]
 modId = "neoforge"
 type = "required"
-versionRange = "[26.1-beta,26.2)"
+versionRange = "[26.1,26.2)"
 ordering = "NONE"
 side = "BOTH"
 
