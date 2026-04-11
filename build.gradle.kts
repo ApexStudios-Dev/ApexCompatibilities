@@ -8,6 +8,31 @@ plugins {
 group = "dev.apexstudios"
 neoForge.version = libs.versions.neoforge.get()
 
+repositories {
+    repositories {
+        maven("https://maven.apexmodder.com/prs/ApexCore/pr82") {
+            content {
+                includeModule("dev.apexstudios", "apexcore")
+            }
+        }
+    }
+
+    repositories {
+        maven("https://maven.apexmodder.com/prs/FantasyFurniture/pr112") {
+            content {
+                includeModule("dev.apexstudios", "fantasyfurniture")
+                includeModule("dev.apexstudios", "fantasyfurniture_bone")
+                includeModule("dev.apexstudios", "fantasyfurniture_decorations")
+                includeModule("dev.apexstudios", "fantasyfurniture_dunmer")
+                includeModule("dev.apexstudios", "fantasyfurniture_necrolord")
+                includeModule("dev.apexstudios", "fantasyfurniture_nordic")
+                includeModule("dev.apexstudios", "fantasyfurniture_royal")
+                includeModule("dev.apexstudios", "fantasyfurniture_venthyr")
+            }
+        }
+    }
+}
+
 dependencies {
     implementation(libs.bundles.apexcore)
     "dataImplementation"(libs.bundles.apexcore)
