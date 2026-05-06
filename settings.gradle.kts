@@ -27,9 +27,9 @@ dependencyResolutionManagement {
 
         library("itemresistance", "dev.apexstudios", "itemresistance").version("26.1.2")
         library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.1.2")
-        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.1.2")
+        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.1.4")
 
-        version("fantasyfurniture", "26.1.10-beta-pr-112")
+        version("fantasyfurniture", "26.1.7")
         library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
         library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture_nordic").versionRef("fantasyfurniture")
         library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture_venthyr").versionRef("fantasyfurniture")
