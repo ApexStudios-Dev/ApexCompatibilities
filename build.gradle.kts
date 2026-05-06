@@ -48,11 +48,11 @@ dependencies {
 
     implementation(libs.fantasyfurniture)
     implementation(libs.fantasyfurniture.nordic)
-    compileOnly(libs.fantasyfurniture.venthyr)
-    compileOnly(libs.fantasyfurniture.bone)
-    compileOnly(libs.fantasyfurniture.dunmer)
-    compileOnly(libs.fantasyfurniture.necrolord)
-    compileOnly(libs.fantasyfurniture.royal)
+    implementation(libs.fantasyfurniture.venthyr)
+    implementation(libs.fantasyfurniture.bone)
+    implementation(libs.fantasyfurniture.dunmer)
+    implementation(libs.fantasyfurniture.necrolord)
+    implementation(libs.fantasyfurniture.royal)
     implementation(libs.fantasyfurniture.decorations)
 
     compileOnly(libs.bundles.rei)
