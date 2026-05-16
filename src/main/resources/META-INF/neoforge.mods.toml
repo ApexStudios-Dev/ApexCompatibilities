@@ -8,7 +8,8 @@ displayName = "ApexCompatibilities"
 credits = "Apex - Programming"
 authors = "ApexStudios"
 description = "Provides compatibility for various mods for all of ApexStudios' mods"
-logoFile = "logo.png"
+logoFile = "banner.png"
+iconFile = "logo.png"
 displayURL = "https://modrinth.com/mod/apexcore"
 
 [[dependencies.apexcompatibilities]]
