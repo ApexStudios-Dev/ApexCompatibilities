@@ -19,17 +19,17 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        version("neoforge", "26.1.2.42-beta")
+        version("neoforge", "26.2.0.0-beta")
 
-        library("registree", "dev.apexstudios", "registree").version("26.1.0")
-        library("apexcore", "dev.apexstudios", "apexcore").version("26.1.2")
+        library("registree", "dev.apexstudios", "registree").version("26.2.0")
+        library("apexcore", "dev.apexstudios", "apexcore").version("26.2.0")
         bundle("apexcore", listOf("registree", "apexcore"))
 
-        library("itemresistance", "dev.apexstudios", "itemresistance").version("26.1.2")
-        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.1.2")
-        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.1.4")
+        library("itemresistance", "dev.apexstudios", "itemresistance").version("26.2.0")
+        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.2.0")
+        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.2.0")
 
-        version("fantasyfurniture", "26.1.7")
+        version("fantasyfurniture", "26.2.0")
         library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
         library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture_nordic").versionRef("fantasyfurniture")
         library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture_venthyr").versionRef("fantasyfurniture")
@@ -55,41 +55,6 @@ dependencyResolutionManagement {
 
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-}
-
-listOf(
-    "Registree",
-    "ApexCore",
-    "ItemResistance",
-    "InfusedFoods",
-    "FantasyDice"
-).forEach { lib ->
-    if(file("../../${lib}/26.1").exists()) {
-        includeBuild("../../${lib}/26.1") {
-            name = lib
-
-            dependencySubstitution {
-                substitute(module("dev.apexstudios:${lib.lowercase()}")).using(project(":"))
-            }
-        }
-    }
-}
-
-if(file("../../FantasyFurniture/26.1").exists()) {
-    includeBuild("../../FantasyFurniture/26.1") {
-        name = "FantasyFurniture"
-
-        dependencySubstitution {
-            substitute(module("dev.apexstudios:fantasyfurniture")).using(project(":"))
-            substitute(module("dev.apexstudios:fantasyfurniture_nordic")).using(project(":fantasyfurniture_nordic"))
-            substitute(module("dev.apexstudios:fantasyfurniture_venthyr")).using(project(":fantasyfurniture_venthyr"))
-            substitute(module("dev.apexstudios:fantasyfurniture_bone")).using(project(":fantasyfurniture_bone"))
-            substitute(module("dev.apexstudios:fantasyfurniture_dunmer")).using(project(":fantasyfurniture_dunmer"))
-            substitute(module("dev.apexstudios:fantasyfurniture_necrolord")).using(project(":fantasyfurniture_necrolord"))
-            substitute(module("dev.apexstudios:fantasyfurniture_royal")).using(project(":fantasyfurniture_royal"))
-            substitute(module("dev.apexstudios:fantasyfurniture_decorations")).using(project(":fantasyfurniture_decorations"))
-        }
-    }
 }
 
 rootProject.name = "ApexCompatibilities"
