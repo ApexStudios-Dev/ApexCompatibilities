@@ -3,6 +3,7 @@ package dev.apexstudios.apexcompatibilities.rei;
 import dev.apexstudios.apexcompatibilities.ApexCompatibilities;
 import dev.apexstudios.apexcompatibilities.CompatManager;
 import dev.apexstudios.apexcompatibilities.rei.dice.FantasyDiceReiServerSetup;
+import dev.apexstudios.apexcompatibilities.rei.furniture.FantasyFurnitureReiServerSetup;
 import dev.apexstudios.apexcompatibilities.rei.infused.InfusedFoodsReiServerSetup;
 import me.shedaniel.rei.api.common.display.DisplaySerializerRegistry;
 import me.shedaniel.rei.api.common.entry.comparison.FluidComparatorRegistry;
@@ -20,7 +21,7 @@ public final class ReiServerSetup implements REICommonPlugin {
     private final CompatManager<ReiServerSetup, REICommonPlugin> manager = CompatManager.create(this, builder -> builder
                     .with(ApexCompatibilities.INFUSED_FOODS, () -> InfusedFoodsReiServerSetup::new)
                     .with(ApexCompatibilities.FANTASY_DICE, () -> FantasyDiceReiServerSetup::new)
-                    // .with(ApexCompatibilities.FANTASY_FURNITURE, () -> FantasyFurnitureReiServerSetup::new)
+                    .with(ApexCompatibilities.FANTASY_FURNITURE, () -> FantasyFurnitureReiServerSetup::new)
     );
 
     @Override
