@@ -34,7 +34,7 @@ curseforge = "238222"
 [[dependencies.apexcompatibilities]]
 modId = "roughlyenoughitems"
 type = "optional"
-versionRange = "[21.0,22.0)"
+versionRange = "[26.1,27.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "nfn13YXA"
 curseforge = "310111"
