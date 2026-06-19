@@ -16,7 +16,7 @@ public final class FurnitureStationClientRecipeType implements ReliableClientRec
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("view.rrv.type.furniture_station");
+        return FurnitureStationSetup.BLOCK.value().getName();
     }
 
     @Override
