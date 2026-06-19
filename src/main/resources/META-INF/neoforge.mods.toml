@@ -27,7 +27,7 @@ side = "BOTH"
 [[dependencies.apexcompatibilities]]
 modId = "jei"
 type = "optional"
-versionRange = "[29.0,30.0)"
+versionRange = "[30.0,31.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "u6dRKJwZ"
 curseforge = "238222"

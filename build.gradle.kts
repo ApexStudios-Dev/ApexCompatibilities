@@ -86,7 +86,7 @@ dependencies {
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
 
-    runtimeOnly(libs.rei)
-    // runtimeOnly(libs.jei)
-    // runtimeOnly(libs.jade)
+    // runtimeOnly(libs.rei)
+    runtimeOnly(libs.jei)
+    runtimeOnly(libs.jade)
 }
