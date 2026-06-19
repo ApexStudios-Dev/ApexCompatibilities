@@ -49,7 +49,7 @@ curseforge = "324717"
 [[dependencies.apexcompatibilities]]
 modId = "rrv"
 type = "optional"
-versionRange = "[8.4,8.5)"
+versionRange = "[8.0,9.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "5VolwT6c"
 curseforge = "1422317"
