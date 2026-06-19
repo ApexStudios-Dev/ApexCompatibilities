@@ -85,8 +85,10 @@ dependencies {
     compileOnly(libs.bundles.rei)
     compileOnly(libs.jei.api)
     compileOnly(libs.jade)
+    compileOnly(libs.rrv)
 
     // runtimeOnly(libs.rei)
     runtimeOnly(libs.jei)
     runtimeOnly(libs.jade)
+    // runtimeOnly(libs.rrv)
 }
