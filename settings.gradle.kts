@@ -49,6 +49,8 @@ dependencyResolutionManagement {
         library("jei-api", "mezz.jei", "jei-26.2-neoforge-api").versionRef("jei")
         library("jei", "mezz.jei", "jei-26.2-neoforge").versionRef("jei")
 
+        library("rrv", "cc.cassian.rrv", "reliable-recipe-viewer-neoforge").version("8.4.2+26.2")
+
         library("jade", "maven.modrinth", "jade").version("26.2.2+neoforge")
     }
 }

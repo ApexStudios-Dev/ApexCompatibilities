@@ -10,6 +10,8 @@ authors = "ApexStudios"
 description = "Provides compatibility for various mods for all of ApexStudios' mods"
 logoFile = "logo.png"
 displayURL = "https://modrinth.com/mod/apexcore"
+rrv = "dev.apexstudios.apexcompatibilities.rrv.RrvServerPlugin"
+rrv_client = "dev.apexstudios.apexcompatibilities.rrv.RrvClientPlugin"
 
 [[dependencies.apexcompatibilities]]
 modId = "minecraft"
@@ -45,6 +47,13 @@ versionRange = "[26.0,27.0)"
 [dependencies.apexcompatibilities.mc-publish]
 modrinth = "nvQzSEkH"
 curseforge = "324717"
+[[dependencies.apexcompatibilities]]
+modId = "rrv"
+type = "optional"
+versionRange = "[8.4.2,9.0)" # 8.4.2 - ItemView.excludeItemStack
+[dependencies.apexcompatibilities.mc-publish]
+modrinth = "5VolwT6c"
+curseforge = "1422317"
 
 [[dependencies.apexcompatibilities]]
 modId = "apexcore"
