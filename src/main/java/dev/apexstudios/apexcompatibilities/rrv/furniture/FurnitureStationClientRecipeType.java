@@ -54,7 +54,7 @@ public final class FurnitureStationClientRecipeType implements ReliableClientRec
 
     @Override
     public ItemStack getIcon() {
-        return FurnitureStationSetup.BLOCK_ITEM.value().getDefaultInstance();
+        return new ItemStack(FurnitureStationSetup.BLOCK);
     }
 
     @Override
