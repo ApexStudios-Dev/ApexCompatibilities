@@ -2,7 +2,7 @@ package dev.apexstudios.apexcompatibilities.rei.furniture;
 
 import com.google.errorprone.annotations.OverridingMethodsMustInvokeSuper;
 import dev.apexstudios.fantasyfurniture.common.util.FurnitureUtil;
-import dev.apexstudios.registree.api.Registree;
+import dev.apexstudios.registree.BaseRegistree;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.entry.CollapsibleEntryRegistry;
@@ -12,10 +12,10 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 
 public class FurnitureSetReiClientSetup implements REIClientPlugin {
-    private final Registree registree;
+    private final BaseRegistree<?> registree;
     private final String englishName;
 
-    protected FurnitureSetReiClientSetup(Registree registree, String englishName) {
+    protected FurnitureSetReiClientSetup(BaseRegistree<?> registree, String englishName) {
         this.registree = registree;
         this.englishName = englishName;
     }
@@ -26,7 +26,7 @@ public class FurnitureSetReiClientSetup implements REIClientPlugin {
         registry.group(
                 registree.registryName("rei_group"),
                 Component.literal(englishName),
-                registree.stream(Registries.ITEM)
+                registree.values(Registries.ITEM)
                         .map(EntryStacks::of)
                         .toList()
         );

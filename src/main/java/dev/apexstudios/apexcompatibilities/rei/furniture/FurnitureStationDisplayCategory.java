@@ -21,7 +21,7 @@ final class FurnitureStationDisplayCategory implements DisplayCategory<Furniture
 
     @Override
     public Renderer getIcon() {
-        return EntryStacks.of(FurnitureStationSetup.BLOCK_ITEM.value());
+        return EntryStacks.of(FurnitureStationSetup.BLOCK);
     }
 
     @Override

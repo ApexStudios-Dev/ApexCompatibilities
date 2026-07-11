@@ -3,14 +3,14 @@ package dev.apexstudios.apexcompatibilities.jei.furniture;
 import dev.apexstudios.apexcompatibilities.jei.JeiCompat;
 import dev.apexstudios.apexcompatibilities.jei.JeiSetup;
 import dev.apexstudios.fantasyfurniture.common.util.FurnitureUtil;
-import dev.apexstudios.registree.api.Registree;
+import dev.apexstudios.registree.BaseRegistree;
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 
 public class FurnitureSetJeiPlugin extends JeiCompat {
-    protected final Registree registree;
+    protected final BaseRegistree<?> registree;
 
-    protected FurnitureSetJeiPlugin(JeiSetup owner, Registree registree) {
+    protected FurnitureSetJeiPlugin(JeiSetup owner, BaseRegistree<?> registree) {
         super(owner);
 
         this.registree = registree;

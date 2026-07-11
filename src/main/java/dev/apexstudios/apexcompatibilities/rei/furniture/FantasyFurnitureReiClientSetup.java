@@ -9,6 +9,6 @@ public final class FantasyFurnitureReiClientSetup implements REIClientPlugin {
     @Override
     public void registerCategories(CategoryRegistry registry) {
         registry.add(new FurnitureStationDisplayCategory());
-        registry.addWorkstations(FantasyFurnitureReiServerSetup.FURNITURE_STATION, EntryStacks.of(FurnitureStationSetup.BLOCK_ITEM.value()));
+        registry.addWorkstations(FantasyFurnitureReiServerSetup.FURNITURE_STATION, EntryStacks.of(FurnitureStationSetup.BLOCK));
     }
 }
