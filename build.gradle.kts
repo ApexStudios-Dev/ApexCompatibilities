@@ -16,37 +16,37 @@ repositories {
         }
     }*/
 
-    maven("https://maven.apexmodder.com/prs/Registree/pr30") {
+    maven("https://maven.apexmodder.com/prs/Registree/pr33") {
         content {
             includeModule("dev.apexstudios", "registree")
         }
     }
 
-    maven("https://maven.apexmodder.com/prs/ApexCore/pr89") {
+    maven("https://maven.apexmodder.com/prs/ApexCore/pr92") {
         content {
             includeModule("dev.apexstudios", "apexcore")
         }
     }
 
-    maven("https://maven.apexmodder.com/prs/ItemResistance/pr49") {
+    maven("https://maven.apexmodder.com/prs/ItemResistance/pr52") {
         content {
             includeModule("dev.apexstudios", "itemresistance")
         }
     }
 
-    maven("https://maven.apexmodder.com/prs/InfusedFoods/pr52") {
+    maven("https://maven.apexmodder.com/prs/InfusedFoods/pr55") {
         content {
             includeModule("dev.apexstudios", "infusedfoods")
         }
     }
 
-    maven("https://maven.apexmodder.com/prs/FantasyDice/pr50") {
+    maven("https://maven.apexmodder.com/prs/FantasyDice/pr53") {
         content {
             includeModule("dev.apexstudios", "fantasydice")
         }
     }
 
-    maven("https://maven.apexmodder.com/prs/FantasyFurniture/pr121") {
+    maven("https://maven.apexmodder.com/prs/FantasyFurniture/pr125") {
         content {
             includeModule("dev.apexstudios", "fantasyfurniture")
             includeModule("dev.apexstudios", "fantasyfurniture_bone")
