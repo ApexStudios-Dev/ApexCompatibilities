@@ -9,6 +9,41 @@ group = "dev.apexstudios"
 neoForge.version = libs.versions.neoforge.get()
 
 repositories {
+    exclusiveContent {
+        forRepository {
+            maven("https://api.modrinth.com/maven")
+        }
+
+        filter {
+            includeGroup("maven.modrinth")
+        }
+    }
+
+    maven("https://maven.blamejared.com") {
+        content {
+            includeGroup("mezz.jei")
+        }
+    }
+
+    maven("https://maven.shedaniel.me") {
+        content {
+            includeGroup("me.shedaniel")
+            includeGroup("me.shedaniel.cloth")
+        }
+    }
+
+    maven("https://maven.architectury.dev") {
+        content {
+            includeGroup("dev.architectury")
+        }
+    }
+
+    maven("https://maven.cassian.cc") {
+        content {
+            includeGroup("cc.cassian.rrv")
+        }
+    }
+
     /*maven("https://prmaven.neoforged.net/NeoForge/pr3198") {
         content {
             includeModule("net.neoforged", "neoforge")
