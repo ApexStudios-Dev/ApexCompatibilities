@@ -19,17 +19,17 @@ pluginManagement {
 
 dependencyResolutionManagement {
     versionCatalogs.create("libs") {
-        version("neoforge", "26.3.0.11-beta-pr-3492-pr-data-gen-extensions")
+        version("neoforge", "26.3.0.12-beta-pr-3492-pr-data-gen-extensions")
 
-        library("registree", "dev.apexstudios", "registree").version("26.3.2-beta-pr-37")
-        library("apexcore", "dev.apexstudios", "apexcore").version("26.3.5-beta-pr-96")
+        library("registree", "dev.apexstudios", "registree").version("26.3.3-beta-pr-37")
+        library("apexcore", "dev.apexstudios", "apexcore").version("26.3.6-beta-pr-96")
         bundle("apexcore", listOf("registree", "apexcore"))
 
-        library("itemresistance", "dev.apexstudios", "itemresistance").version("26.3.6-beta-pr-56")
-        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.3.2-beta-pr-59")
-        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.3.2-beta-pr-57")
+        library("itemresistance", "dev.apexstudios", "itemresistance").version("26.3.7-beta-pr-56")
+        library("infusedfoods", "dev.apexstudios", "infusedfoods").version("26.3.3-beta-pr-59")
+        library("fantasydice", "dev.apexstudios", "fantasydice").version("26.3.4-beta-pr-57")
 
-        version("fantasyfurniture", "26.3.1-beta-pr-133")
+        version("fantasyfurniture", "26.3.2-beta-pr-133")
         library("fantasyfurniture", "dev.apexstudios", "fantasyfurniture").versionRef("fantasyfurniture")
         library("fantasyfurniture_nordic", "dev.apexstudios", "fantasyfurniture_nordic").versionRef("fantasyfurniture")
         library("fantasyfurniture_venthyr", "dev.apexstudios", "fantasyfurniture_venthyr").versionRef("fantasyfurniture")
@@ -45,13 +45,13 @@ dependencyResolutionManagement {
         library("rei-default-plugins", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
         bundle("rei", listOf("rei-api", "rei-default-plugins"))
 
-        version("jei", "30.0.0.1")
-        library("jei-api", "mezz.jei", "jei-26.2-neoforge-api").versionRef("jei")
-        library("jei", "mezz.jei", "jei-26.2-neoforge").versionRef("jei")
+        version("jei", "31.0.0.5")
+        library("jei-api", "mezz.jei", "jei-26.3-neoforge-api").versionRef("jei")
+        library("jei", "mezz.jei", "jei-26.3-neoforge").versionRef("jei")
 
-        library("rrv", "cc.cassian.rrv", "reliable-recipe-viewer-neoforge").version("8.4.2+26.2")
+        library("rrv", "cc.cassian.rrv", "reliable-recipe-viewer-neoforge").version("8.10.5+26.3")
 
-        library("jade", "maven.modrinth", "jade").version("26.2.2+neoforge")
+        library("jade", "maven.modrinth", "jade").version("26.3.1+neoforge")
     }
 }
 

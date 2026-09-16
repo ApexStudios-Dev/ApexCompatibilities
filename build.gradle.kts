@@ -19,6 +19,16 @@ repositories {
         }
     }
 
+    exclusiveContent {
+        forRepository {
+            maven("https://cursemaven.com")
+        }
+
+        filter {
+            includeGroup("curse.maven")
+        }
+    }
+
     maven("https://maven.blamejared.com") {
         content {
             includeGroup("mezz.jei")
