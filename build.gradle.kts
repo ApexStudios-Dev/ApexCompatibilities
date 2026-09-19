@@ -54,44 +54,44 @@ repositories {
         }
     }
 
-    maven("https://prmaven.neoforged.net/NeoForge/pr3492") {
+    /*maven("https://prmaven.neoforged.net/NeoForge/pr3492") {
         content {
             includeModule("net.neoforged", "neoforge")
             includeModule("net.neoforged", "testframework")
         }
-    }
+    }*/
 
-    maven("https://maven.apexmodder.com/prs/Registree/pr37") {
+    /*maven("https://maven.apexmodder.com/prs/Registree/pr37") {
         content {
             includeModule("dev.apexstudios", "registree")
         }
-    }
+    }*/
 
-    maven("https://maven.apexmodder.com/prs/ApexCore/pr96") {
+    /*maven("https://maven.apexmodder.com/prs/ApexCore/pr96") {
         content {
             includeModule("dev.apexstudios", "apexcore")
         }
-    }
+    }*/
 
-    maven("https://maven.apexmodder.com/prs/ItemResistance/pr56") {
+    /*maven("https://maven.apexmodder.com/prs/ItemResistance/pr56") {
         content {
             includeModule("dev.apexstudios", "itemresistance")
         }
-    }
+    }*/
 
-    maven("https://maven.apexmodder.com/prs/InfusedFoods/pr59") {
+    /*maven("https://maven.apexmodder.com/prs/InfusedFoods/pr59") {
         content {
             includeModule("dev.apexstudios", "infusedfoods")
         }
-    }
+    }*/
 
-    maven("https://maven.apexmodder.com/prs/FantasyDice/pr57") {
+    /*maven("https://maven.apexmodder.com/prs/FantasyDice/pr57") {
         content {
             includeModule("dev.apexstudios", "fantasydice")
         }
-    }
+    }*/
 
-    maven("https://maven.apexmodder.com/prs/FantasyFurniture/pr133") {
+    /*maven("https://maven.apexmodder.com/prs/FantasyFurniture/pr133") {
         content {
             includeModule("dev.apexstudios", "fantasyfurniture")
             includeModule("dev.apexstudios", "fantasyfurniture_bone")
@@ -102,7 +102,7 @@ repositories {
             includeModule("dev.apexstudios", "fantasyfurniture_royal")
             includeModule("dev.apexstudios", "fantasyfurniture_venthyr")
         }
-    }
+    }*/
 }
 
 dependencies {
