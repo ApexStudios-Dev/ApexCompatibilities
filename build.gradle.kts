@@ -32,6 +32,7 @@ repositories {
     maven("https://maven.blamejared.com") {
         content {
             includeGroup("mezz.jei")
+            includeGroup("net.mezzdev.config")
         }
     }
 

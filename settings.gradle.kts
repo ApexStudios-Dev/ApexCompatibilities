@@ -10,7 +10,7 @@ pluginManagement {
         resolutionStrategy {
             eachPlugin {
                 if(requested.id.namespace == "apex-conventions") {
-                    useVersion("0.1.102")
+                    useVersion("0.1.103")
                 }
             }
         }
@@ -39,17 +39,17 @@ dependencyResolutionManagement {
         library("fantasyfurniture_royal", "dev.apexstudios", "fantasyfurniture_royal").versionRef("fantasyfurniture")
         library("fantasyfurniture_decorations", "dev.apexstudios", "fantasyfurniture_decorations").versionRef("fantasyfurniture")
 
-        version("rei", "26.2.820")
+        version("rei", "26.3.822")
         library("rei", "me.shedaniel", "RoughlyEnoughItems-neoforge").versionRef("rei")
         library("rei-api", "me.shedaniel", "RoughlyEnoughItems-api-neoforge").versionRef("rei")
         library("rei-default-plugins", "me.shedaniel", "RoughlyEnoughItems-default-plugin-neoforge").versionRef("rei")
         bundle("rei", listOf("rei-api", "rei-default-plugins"))
 
-        version("jei", "31.0.0.5")
+        version("jei", "31.7.0.42")
         library("jei-api", "mezz.jei", "jei-26.3-neoforge-api").versionRef("jei")
         library("jei", "mezz.jei", "jei-26.3-neoforge").versionRef("jei")
 
-        library("rrv", "cc.cassian.rrv", "reliable-recipe-viewer-neoforge").version("8.10.5+26.3")
+        library("rrv", "cc.cassian.rrv", "reliable-recipe-viewer-neoforge").version("8.10.9+26.3")
 
         library("jade", "maven.modrinth", "jade").version("26.3.1+neoforge")
     }
